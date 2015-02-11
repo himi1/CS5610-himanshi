@@ -1,0 +1,5 @@
+﻿../../story/whatisnext.htm?../Experiments/HTML/htmlstory.txt	What is next?
+basics.html		Basic Heading and formatting tags
+inputways.html	Implementing various input methods
+audvid.html		Playing audio video experiment
+html5tags.html	HTML5 tags

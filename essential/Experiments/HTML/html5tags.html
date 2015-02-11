@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset='utf-8' />
+
+    <title>html5 tags Experiment</title>
+
+    <style type="text/css">
+        ul.master_navigation {
+            font-size: 100%;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            margin: 0.5em 0;
+            padding: 0;
+        }
+
+            ul.master_navigation li {
+                display: inline-block;
+                padding: 0 0.5%;
+            }
+
+        a {
+            color: #08f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #88f;
+            }
+
+            a:hover {
+                color: #f00;
+            }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        body {
+            width: 1024px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="pad">
+
+        <form id="form1" runat="server">
+
+            <div>
+
+                <ul class="master_navigation">
+                    <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
+                    <li><a href="statistics/" target="_blank">Statistics</a></li>
+                    <li><a href="source/" target="_blank">Source</a></li>
+                    <li><a href="search/" target="_blank">Search</a></li>
+                    <li><a href="searchtree/" target="_blank">SearchTree</a></li>
+                    <li><a href="textview/" target="_blank">TextView</a></li>
+                    <li><a href="filelist.aspx" target="_blank">FileList</a></li>
+                    <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
+                    <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
+                    <li><a href="blog/" target="_blank">Blog</a></li>
+                </ul>
+
+                <hr />
+            </div>
+
+            <h1>Trying few HTML5 Tags</h1>
+            <hr />
+            <h3>Formatting html5 tags</h3>
+            <p>&lt;mark> is used to <mark>Mark something important</mark>.</p>
+            <p>&lt;meter> tag is used to measure data within a given range</p>
+            <meter value="0.5"></meter> <meter value="0.8"></meter>
+            <p>&lt;progress> tag is used to indicate current progress. For example:</p>
+            <p><strong>Form progress: </strong><progress value="7" max="10"></progress></p>
+            <p>&lt;</p>
+            <p>Inputing of data using various ways&lt;</p>
+            <input type="password" name="inputpassword" value=""/>
+            <p>&lt;</p>
+            <p>&lt;</p>
+
+            
+            
+            <p>use of &lt;datalist> tag to input weekdays</p>
+            <div>
+                <input list="weekdays" name="selected_day">
+                <datalist id="weekdays">
+                    <option value="Monday">
+                    <option value="Tuesday">
+                    <option value="Wednesday">
+                    <option value="Thrusday">
+                    <option value="Friday">
+
+                </datalist>
+                <input type="submit">
+            </div>
+            <div>
+                <input list="weekdays" name="selected_day">
+                <datalist id="weekdays">
+                    <option value="Monday">
+                    <option value="Tuesday">
+                    <option value="Wednesday">
+                    <option value="Thrusday">
+                    <option value="Friday">
+
+                </datalist>
+                <input type="checkbox">
+            </div>
+            
+
+            </form>
+
+    </div>
+    <footer>
+        <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/html5tags.html">View here</a></p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
+    </footer>
+</body>
+</html>

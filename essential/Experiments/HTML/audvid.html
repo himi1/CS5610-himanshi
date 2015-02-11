@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset='utf-8' />
+
+    <title>Audio video Experiment</title>
+
+    <style type="text/css">
+        ul.master_navigation {
+            font-size: 100%;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            margin: 0.5em 0;
+            padding: 0;
+        }
+
+            ul.master_navigation li {
+                display: inline-block;
+                padding: 0 0.5%;
+            }
+
+        a {
+            color: #08f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #88f;
+            }
+
+            a:hover {
+                color: #f00;
+            }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        body {
+            width: 1024px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="pad">
+
+        <form id="form1" runat="server">
+
+            <div>
+
+                <ul class="master_navigation">
+                    <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
+                    <li><a href="statistics/" target="_blank">Statistics</a></li>
+                    <li><a href="source/" target="_blank">Source</a></li>
+                    <li><a href="search/" target="_blank">Search</a></li>
+                    <li><a href="searchtree/" target="_blank">SearchTree</a></li>
+                    <li><a href="textview/" target="_blank">TextView</a></li>
+                    <li><a href="filelist.aspx" target="_blank">FileList</a></li>
+                    <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
+                    <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
+                    <li><a href="blog/" target="_blank">Blog</a></li>
+                </ul>
+
+                <hr />
+                <h1>Audio Video Implementations</h1>
+                <hr />
+                <h3>Playing audio on webpage</h3>
+                <audio controls>
+                    <source src="../source/aud001.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <h4>Autoplay enabled</h4>
+                <audio controls autoplay>
+                    <source src="../source/aud002.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+                <hr />
+                <h3>Playing audio on webpage</h3>
+                <video width="400" height="300" controls>
+                    <source src="../source/vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br /><h4>Autoplay enabled</h4>
+                <video width="400" height="300" autoplay controls>
+                    <h3>bhbjhb</h3>autonnk<source src="../source/vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                &lt;-Hover over the video to get control options.
+                
+            </div>
+
+        </form>
+
+    </div>
+    <footer>
+        <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/audvid.html">View here</a></p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
+    </footer>
+</body>
+</html>

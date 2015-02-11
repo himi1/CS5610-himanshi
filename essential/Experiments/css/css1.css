@@ -1,0 +1,26 @@
+﻿
+    nav {
+    float: left;
+    background-color:#00ff21;
+    height:400px;
+    width:150px;
+    padding:10px;
+}
+                
+ article {
+    width:1400px;
+    float:left;
+    padding:10px;
+    text-indent:each-line;
+
+}
+
+ footer {
+     width:1400px;
+    color: blueviolet;
+    clear:both;
+    text-align:left;
+    padding:1px;
+}
+
+

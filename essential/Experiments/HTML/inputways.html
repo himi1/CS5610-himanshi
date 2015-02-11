@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset='utf-8' />
+
+    <title>Input ways Experiment</title>
+
+    <style type="text/css">
+        ul.master_navigation {
+            font-size: 100%;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            margin: 0.5em 0;
+            padding: 0;
+        }
+
+            ul.master_navigation li {
+                display: inline-block;
+                padding: 0 0.5%;
+            }
+
+        a {
+            color: #08f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #88f;
+            }
+
+            a:hover {
+                color: #f00;
+            }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        body {
+            width: 1024px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="pad">
+
+        <form id="form1" runat="server">
+
+            <div>
+
+                <ul class="master_navigation">
+                    <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
+                    <li><a href="statistics/" target="_blank">Statistics</a></li>
+                    <li><a href="source/" target="_blank">Source</a></li>
+                    <li><a href="search/" target="_blank">Search</a></li>
+                    <li><a href="searchtree/" target="_blank">SearchTree</a></li>
+                    <li><a href="textview/" target="_blank">TextView</a></li>
+                    <li><a href="filelist.aspx" target="_blank">FileList</a></li>
+                    <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
+                    <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
+                    <li><a href="blog/" target="_blank">Blog</a></li>
+                </ul>
+                </div>
+        </form>
+
+    
+
+    <hr />
+   
+    <h1>Inputing of data using various ways</h1>
+        <form id="inputform">
+            Enter name*:
+            <input type="text" name="name" value="" required/><br />
+            Enter password*:
+            <input type="password" name="password" value="" required /><br />
+            Enter date of birth:
+            <input type="date" name="bdate" value="" required /><br />
+            Enter email*:
+            <input type="email" name="email" value="" required /><br />
+            Married:
+            <input type="checkbox" name="married" value="" /><br />
+            Gender:
+            Male<input type="radio" name="gender" value="male" checked>
+            Female<input type="radio" name="gender" value="female"><br />
+            Enter Contact number:
+            <input type="tel" name="tel" value="" /><br />
+            Enter Favorite Color:
+            <input type="color" name="fcolor" value="" /><br />
+            Enter Age(between 18 and 60):
+            <input type="number" name="quantity" min="18" max="60" value="18"/><br />
+            Enter Month of joining:
+            <input type="month" name="jmonth" value="" /><br />
+            Enter Week of joining:
+            <input type="week" name="email" value="" /><br />
+            Enter date and time of joining:
+            <input type="datetime" name="jdate" value="" /><br />
+            Enter rating:
+            <input type="range" name="rating" value="2" max="5" /><br /><br />
+            Enter a suitable time to talk to you:
+            <input type="time" name="email" value="" /><br />
+            Enter your Blog Link(if any):
+            <input type="url" name="blog" value="" /><br />
+            Enter weekday:
+            <input list="weekdays" name="selected_day">
+            <datalist id="weekdays">
+                <option value="Monday">
+                <option value="Tuesday">
+                <option value="Wednesday">
+                <option value="Thrusday">
+                <option value="Friday">
+            </datalist>
+            <input type="submit" name="submit" value="submit" onclick="alert('Thank you for filling the form.')" />
+            
+        </form>
+
+        <h5>Things implemented</h5>
+        <p> Hello. I implemented various input types on this page. Some entries are made "required". Datalist is used for 
+            taking value of weekday(the last thing in the form). onclick event is also added on Submit button.
+            Rest is self-understandable.</p>
+
+        <footer>
+            <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/inputways.html">View here</a></p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
+        </footer>
+    </div>
+</body>
+</html>
