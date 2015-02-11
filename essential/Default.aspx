@@ -98,13 +98,14 @@
                         <hr />
 
                         <p>
-                            Here is a link to
+                            Here is a link to 
                             <a href="story/index.htm?../Experiments/story.txt" target="_blank">My Experiments</a>.
+                        </p>
+                          <p>
+                            Here is a link to my 
+                            <a href="https://github.com/himi1/CS5610-himanshi" target="_blank">Github Files</a>.
   
                         </p>
-                          Here's a link to my 
-                       <a href="Himanshi_Resume.pdf" target='_blank' title="Resume">Resume</a> for reference.
-                   
                                 <hr />
 
                             </div>
