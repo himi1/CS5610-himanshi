@@ -1,3 +1,5 @@
 ﻿../../story/whatisnext.htm?../Experiments/jQuery/jQuerystory.txt	What is next?
 1.html	jQuery Effects
-2.html	jQuery
+2.html	jQuery HTML
+3.html	jQuery CSS
+4.html	jQuery Dimensions

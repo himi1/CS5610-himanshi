@@ -1,0 +1,65 @@
+﻿ #panel, #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+    }
+
+ #panel {
+        padding: 50px;
+        display: none;
+    }
+#div4 {
+  background-color:#4cff00;
+  height:100px;
+  width:100px;
+  position:absolute;
+    }
+
+.bold {
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+
+#div5 {
+  background-color:#4cff00;
+  height:100px;
+  width:400px;
+  position:relative;
+    }
+
+#div6 {
+  background-color:#4cff00;
+  height:100px;
+  width:300px;
+  padding:10px;
+  margin:10px;
+  border:10px;
+  position:relative;
+    }
+
+#div7 {
+  background-color:#4cff00;
+  height:100px;
+  width:300px;
+  padding:10px;
+  margin:10px;
+  border:10px;
+  position:relative;
+    }
+
+#div8 {
+  background-color:#4cff00;
+  height:100px;
+  width:300px;
+  padding:10px;
+  margin:10px;
+  border:10px;
+  position:relative;
+    }

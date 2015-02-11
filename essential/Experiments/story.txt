@@ -3,4 +3,5 @@
 ../story/index.htm?../Experiments/css/cssstory.txt	        WEEK 2 - CSS
 ../story/index.htm?../Experiments/bootstrap/bootstrapstory.txt	WEEK 2 - Bootstrap
 ../story/index.htm?../Experiments/jQuery/jQuerystory.txt   	WEEK 3 - jQuery
+../story/index.htm?../Experiments/jQueryUI/jQueryuistory.txt  WEEK 3 - jQueryUI
 
