@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularJS basics</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+</head>
+<body>
+    <h2>Angular JS Basics</h2><hr />
+    <p>
+        AngularJS starts automatically when the web page has loaded.
+        The ng-app directive tells AngularJS that the &lt;div>
+            element is the "owner" of an AngularJS application.
+        <br />
+            The ng-model directive binds the value of the input field to the application variable name.
+        <br />
+            The ng-bind directive binds the innerHTML of the &lt;p>
+        element to the application variable name.
+    </p>
+    <h3>AngularJS Directives</h3>
+    <div ng-app="" ng-init="FirstName='Himanshi'" ng-controller="personController">
+        <p>The name is <span ng-bind="FirstName"></span></p>
+        <h3>AngularJS Expressions</h3>
+        <p>My first expression: {{ 10 + 10 }}</p>
+        <h3>AngularJS Controller</h3>
+        First Name: <input type="text" ng-model="firstName"><br>
+        Last Name: <input type="text" ng-model="lastName"><br>
+        <br>
+        Full Name: {{firstName + " " + lastName}}
+    </div>
+
+    <script>
+        function personController($scope) {
+            $scope.firstName = "First name";
+            $scope.lastName = "Last name";
+        }
+    </script>
+    
+
+
+
+
+</body>
+</html>
