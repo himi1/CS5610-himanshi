@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularJS Tables</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="4.js"></script>
+    <link href="css1.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h2>Angular JS Tables</h2><hr />
+
+    <h3>Reading of static data from another web page, applying CSS to it and using orderby filer</h3>
+    <div ng-app="" ng-controller="customersController">
+
+        <table>
+            <tr ng-repeat="x in names | orderBy : 'Country'">
+                <td>{{ x.Name }}</td>
+                <td>{{ x.Country }}</td>
+            </tr>
+        </table>
+    </div>
+    <div id="myfooter" class="ui-widget-content">
+        <footer>
+            <p>
+                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/4.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/4.js">jQuery Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/css1.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_tables.asp">jw3schools</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>

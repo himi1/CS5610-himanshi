@@ -3,7 +3,7 @@
 <head>
     <title>AngularJS basics</title>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-
+    <script src="1.js"></script>
 </head>
 <body>
     <h2>Angular JS Basics</h2><hr />
@@ -29,16 +29,14 @@
         Full Name: {{firstName + " " + lastName}}
     </div>
 
-    <script>
-        function personController($scope) {
-            $scope.firstName = "First name";
-            $scope.lastName = "Last name";
-        }
-    </script>
-    
-
-
-
-
+    <div id="myfooter" class="ui-widget-content">
+        <footer>
+            <p>
+                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/1.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/1.js">jQuery Page</a>
+            </p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_intro.asp">w3schools</a></p>
+        </footer>
+        </div>
 </body>
 </html>

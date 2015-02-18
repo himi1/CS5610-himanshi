@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularJS filters</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="2.js"></script>
+</head>
+<body>
+    <h2>Angular JS Filters</h2><hr />
+   
+    <h3>AngularJS Currency Filer</h3>
+    <div ng-app="" ng-controller="costController">
+
+        Quantity: <input type="number" ng-model="quantity">
+        Price: <input type="number" ng-model="price">
+
+        <p>Total = {{ (quantity * price) | currency }}</p>
+    </div>
+    <div id="myfooter" class="ui-widget-content">
+        <footer>
+            <p>
+                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/2.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/2.js">jQuery Page</a>
+            </p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_filters.asp">w3schools</a></p>
+        </footer>
+    </div>
+</body>
+</html>

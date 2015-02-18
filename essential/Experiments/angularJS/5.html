@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularJS Application</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="mynoteapp.js"></script>
+    <script src="mynotecontrol.js"></script>
+</head>
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+    <h2>AngularJS MyNote Application</h2><hr />
+    <h3>My Note</h3>
+    <textarea ng-model="message" cols="50" rows="10"></textarea>
+    <p> <button ng-click="save()">Save</button>
+        <button ng-click="clear()">Clear</button>
+    </p>
+    <p>Number of characters left: <span ng-bind="left()"></span></p> 
+    <div id="myfooter" class="ui-widget-content">
+        <footer>
+            <p>
+                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/mynotecontrol.js">js Page</a>
+            </p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_application.asp">w3schools</a></p>
+        </footer>
+    </div>
+</body>
+</html>

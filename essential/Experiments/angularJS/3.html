@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AngularJS httprequest</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="3.js"></script>
+</head>
+<body>
+    <h2>Angular JS httprequest</h2><hr />
+   
+    <h3>Reading of static data from another web page</h3>
+    <div ng-app="" ng-controller="customersController">
+
+        <ul>
+            <li ng-repeat="x in names">
+                {{ x.Name + ', ' + x.Country }}
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        <p><b>Explaination:</b><br />
+       The ng-controller directive names the controller object.
+    The customersController function is a standard JavaScript object constructor.
+    AngularJS will invoke customersController with a $scope and $http object.
+    $scope is the application object (the owner of application variables and functions).
+    $http is an XMLHttpRequest object for requesting external data.
+    $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
+    If success, the controller creates a property (names) in the scope, with JSON data from the server.
+</p>
+    </div>
+    <div id="myfooter" class="ui-widget-content">
+        <footer>
+            <p>
+                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.js">jQuery Page</a>
+            </p>
+            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_http.asp">w3schools</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
