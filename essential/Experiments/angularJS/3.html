@@ -19,15 +19,39 @@
 
     </div>
     <div>
-        <p><b>Explaination:</b><br />
-       The ng-controller directive names the controller object.
-    The customersController function is a standard JavaScript object constructor.
-    AngularJS will invoke customersController with a $scope and $http object.
-    $scope is the application object (the owner of application variables and functions).
-    $http is an XMLHttpRequest object for requesting external data.
-    $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
-    If success, the controller creates a property (names) in the scope, with JSON data from the server.
-</p>
+        <hr />
+        <h4>About the experiment</h4>
+        <p>
+            This experiment is performed to learn to make a httprequest using  AngularJS<br />
+            AngularJS will invoke customersController with a $scope and $http object.
+            $scope is the application object (the owner of application variables and functions).
+            $http is an XMLHttpRequest object for requesting external data.
+            $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
+            If success, the controller creates a property (names) in the scope, with JSON data from the server.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript :
+        <pre>
+        &lt;script>
+        function customersController($scope, $http) {
+        $http.get("http://www.w3schools.com//website/Customers_JSON.php")
+        .success(function (response) { $scope.names = response; });
+        }
+        &lt;/script>
+        </pre>
+        <hr />
+        HTML :
+        <pre>
+        &lt;div ng-app="" ng-controller="customersController">
+        &lt;ul>
+        &lt;li ng-repeat="x in names">
+        {{ x.Name + ', ' + x.Country }}
+        &lt;/li>
+        &lt;/ul>
+        &lt;/div>
+        </pre>
+        <hr />
     </div>
     <div id="myfooter" class="ui-widget-content">
         <footer>

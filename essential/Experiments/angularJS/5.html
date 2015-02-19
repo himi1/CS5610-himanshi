@@ -15,6 +15,49 @@
     </p>
     <p>Number of characters left: <span ng-bind="left()"></span></p> 
     <div id="myfooter" class="ui-widget-content">
+
+        <div>
+            <hr />
+            <h4>About the experiment</h4>
+            <p>
+                This experiment is performed to learn to implement tables using  AngularJS<br />
+                AngularJS will invoke customersController with a $scope and $http object.
+                $scope is the application object (the owner of application variables and functions).
+                $http is an XMLHttpRequest object for requesting external data.
+                $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
+                If success, the controller creates a property (names) in the scope, with JSON data from the server.
+                This data is then displayed after applying styling to it. I have used  | orderBy : 'Country' to order the names
+                by there Country names.
+            </p>
+            <hr />
+            <h4>Code Snippet</h4>
+            Javascript:<br />
+            mynoteapp.js :
+            <pre>
+             var app = angular.module("myNoteApp", []);        
+            </pre>
+            mynotecontrol.js :
+            <pre>
+            app.controller("myNoteCtrl", function ($scope) {
+            $scope.message = "";
+            $scope.left = function () { return 500 - $scope.message.length; };
+            $scope.clear = function () { $scope.message = ""; };
+            $scope.save = function () { alert("Note Saved"); };
+            });        
+            </pre>
+            <hr />
+            HTML :
+            <pre>
+            &lt;body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+            &lt;textarea ng-model="message" cols="50" rows="10">&lt;/textarea>
+            &lt;p> &lt;button ng-click="save()">Save&lt;/button>
+            &lt;button ng-click="clear()">Clear&lt;/button>
+            &lt;/p>
+            &lt;p>Number of characters left: &lt;span ng-bind="left()">&lt;/span>&lt;/p> 
+            </pre>
+            <hr />
+        </div>
+
         <footer>
             <p>
                 <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.html">HTML Page</a>

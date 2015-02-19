@@ -20,6 +20,60 @@
             </tr>
         </table>
     </div>
+    <div>
+        <hr />
+        <h4>About the experiment</h4>
+        <p>
+            This experiment is performed to learn to implement tables using  AngularJS<br />
+            AngularJS will invoke customersController with a $scope and $http object.
+            $scope is the application object (the owner of application variables and functions).
+            $http is an XMLHttpRequest object for requesting external data.
+            $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
+            If success, the controller creates a property (names) in the scope, with JSON data from the server.
+            This data is then displayed after applying styling to it. I have used  | orderBy : 'Country' to order the names
+            by there Country names.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript :
+        <pre>
+        &lt;script>
+        function customersController($scope, $http) {
+        $http.get("http://www.w3schools.com/website/Customers_JSON.php")
+        .success(function (response) { $scope.names = response; });
+        }
+        &lt;/script>
+        </pre>
+        <hr />
+        HTML :
+        <pre>
+        &lt;div ng-app="" ng-controller="customersController">
+        &lt;table>
+        &lt;tr ng-repeat="x in names | orderBy : 'Country'">
+        &lt;td>{{ x.Name }}</td>
+        &lt;td>{{ x.Country }}</td>
+        &lt;/tr>
+        &lt;/table>
+        &lt;/div>
+       </pre>
+        <hr />
+        CCS :
+        <pre>
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd) {
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+       </pre>
+        <hr />
+    </div>
+
     <div id="myfooter" class="ui-widget-content">
         <footer>
             <p>

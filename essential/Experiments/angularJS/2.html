@@ -16,6 +16,36 @@
 
         <p>Total = {{ (quantity * price) | currency }}</p>
     </div>
+    <div>
+        <hr />
+        <h4>About the experiment</h4>
+        <p>
+            This experiment is making use of filter in AngularJS<br />
+            A filter can be added to an expression with a pipe character (|) and a filter.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript :
+        <pre>
+        &lt;script>
+        function costController($scope) {
+        $scope.quantity = 1;
+        $scope.price = 5;
+        }
+        &lt;/script>
+        </pre>
+        <hr />
+        HTML :
+        <pre>
+        &lt;div ng-app="" ng-controller="costController">
+        Quantity: &lt;input type="number" ng-model="quantity">
+        Price: &lt;input type="number" ng-model="price">
+        &lt;p>Total = {{ (quantity * price) | currency }}&lt;/p>
+        &lt;/div>
+        </pre>
+        <hr />
+    </div>
+
     <div id="myfooter" class="ui-widget-content">
         <footer>
             <p>

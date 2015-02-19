@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset='utf-8' />
+
+    <title>More html Tags</title>
+
+    <style type="text/css">
+        ul.master_navigation {
+            font-size: 100%;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            margin: 0.5em 0;
+            padding: 0;
+        }
+
+            ul.master_navigation li {
+                display: inline-block;
+                padding: 0 0.5%;
+            }
+
+        a {
+            color: #08f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+            a:visited {
+                color: #88f;
+            }
+
+            a:hover {
+                color: #f00;
+            }
+
+        p {
+            text-align: justify;
+        }
+    </style>
+
+    <style type="text/css" media="screen">
+        body {
+            width: 1024px;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="pad">
+
+        <form id="form1" runat="server">
+
+            <div>
+
+                <ul class="master_navigation">
+                    <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
+                    <li><a href="statistics/" target="_blank">Statistics</a></li>
+                    <li><a href="source/" target="_blank">Source</a></li>
+                    <li><a href="search/" target="_blank">Search</a></li>
+                    <li><a href="searchtree/" target="_blank">SearchTree</a></li>
+                    <li><a href="textview/" target="_blank">TextView</a></li>
+                    <li><a href="filelist.aspx" target="_blank">FileList</a></li>
+                    <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
+                    <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
+                    <li><a href="blog/" target="_blank">Blog</a></li>
+                </ul>
+
+                <hr />
+            </div>
+
+            <h1>More HTML Tags</h1>
+            <hr />
+            <div>
+                <h3>Tables</h3>
+                <p>
+                &lt;table> is used to display tables html<br />
+                &lt;caption> is used to display caption of the table<br />
+                &lt;tr>is used to display rows in the table<br />
+                &lt;td> is used to display data in each cell of the table
+                </p>
+                <h3>Tables without border</h3>
+                <table>
+                    <caption>Tables without border</caption>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting </td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>industry. Lorem Ipsum has been the industry's standard dummy text</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>ever since the 1500s, when an unknown printer took a galley of type</td>
+                    </tr>
+                    <tr>
+                        <td>Thrusday</td>
+                        <td>and scrambled it to make a type specimen book. It has survived not</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>only five centuries, but also the leap into electronic typesetting, </td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3>Tables with border</h3>
+                <p>&lt;table border="1"> is used to display tables within borders</p>
+                <table border="1">
+                    <caption>Tables with border</caption>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting </td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>industry. Lorem Ipsum has been the industry's standard dummy text</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>ever since the 1500s, when an unknown printer took a galley of type</td>
+                    </tr>
+                    <tr>
+                        <td>Thrusday</td>
+                        <td>and scrambled it to make a type specimen book. It has survived not</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>only five centuries, but also the leap into electronic typesetting, </td>
+                    </tr>
+                </table>
+            </div>
+            <h3>Images</h3>
+            <p>&lt;img> is used to display image in html</p>
+            <img src="../../images/MyImage.jpg" height="300" width="300">
+            <h3>iFrame</h3>
+            <p>&lt;iFrame> is used to display a web page within a web page.</p>
+            <iframe src="audvid.html" width="500" height="500"></iframe>
+            <hr />
+    </div>
+    <footer>
+        <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/5.html">View here</a></p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/html/html_iframe.asp">w3schools</a></p>
+    </footer>
+</body>
+</html>
