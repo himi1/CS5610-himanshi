@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get Location</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="4.js"></script>
+</head>
+<body class="container">
+    <h2>Get Location on Gmaps</h2><hr />
+    <div id="getLocation">
+        <h3>Click the button to get your position.</h3>
+        <button class="btn btn-success" onclick="getLocation()">Get Location</button>
+        <div id="mapholder">
+        </div>
+    </div>
+        
+    <div id="documentation">
+    <hr />
+    <h4>About the Experiment</h4>
+    <p>
+       In this experiment, I have displayed the user's current location using google maps. 
+    </p>
+    <hr />
+    <h4>Code Snippet</h4>
+    Javascript:
+    <pre>
+    function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    + latlon + "&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+    }
+    </pre>
+    <hr />
+    HTML :
+    <pre>
+    &lt;div id="getLocation">
+    &lt;h3>Click the button to get your position.&lt;/h3>
+    &lt;button class="btn btn-success" onclick="getLocation()">Get Location&lt;/button>
+    &lt;div id="mapholder">
+    &lt;/div>
+    &lt;/div> 
+    </pre>
+    <hr />
+    </div>
+    <footer>
+        <p>
+            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/4.html">HTML Page</a>
+            , <a href="../../fileview/Default.aspx?~/Experiments/misc/4.js">js Page</a>
+        </p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/html/html5_geolocation.asp">w3schools</a></p>
+
+    </footer>
+</body>
+</html>
+

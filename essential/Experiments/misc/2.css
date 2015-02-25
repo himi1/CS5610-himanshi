@@ -1,0 +1,14 @@
+﻿#myFrame {
+                background-image: url(../../images/frame.jpg);
+                width: 278px;
+                height: 273px;
+                padding-top: 20px;
+            }
+
+ #mySlideShow {
+                width: 200px;
+                height: 200px;
+                margin-left: 38px;
+                margin-top: 18px;
+
+            }

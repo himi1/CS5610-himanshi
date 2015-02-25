@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image SlideShow</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="2.js"></script>
+    <link href="2.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <h2>Images SlideShow using JS</h2><hr />
+    <div id="myFrame">
+        <div id="mySlideShow">
+            <input type="button" class="btn btn-success" value="Click to start slide show" onclick="loop()"><br /><br />
+        </div>
+    </div>
+    <div>
+    <hr />
+    <h4>About the Experiment</h4>
+    <p>
+       In this experiment, on clicking the button, a slideshow of Images starts.<br />
+       Image on the frame changes after every two seconds. It goes on in a loop.
+    </p>
+    <hr />
+    <h4>Code Snippet</h4>
+    Javascript:
+    <pre>
+    var mySlideShow = document.getElementById('mySlideShow');
+    var myPics = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg', 'f.jpg', 'g.jpg', 'h.jpg', 'i.jpg', 'j.jpg', 'k.jpg', 'l.jpg'];
+    var PicCount = myPics.length;
+    var i = 0;
+    function loop() {
+        if (i > (PicCount - 1)) {
+            i = 0;
+        }
+    mySlideShow.innerHTML = '<img src="../../images/' + myPics[i] + '">';
+    i++;
+    loopTimer = setTimeout('loop()', 1200);
+    }
+    </pre>
+    <hr />
+    HTML :
+    <pre>
+    &lt;div id="myFrame">
+    &lt;div id="mySlideShow">
+    &lt;input type="button" class="btn btn-success" value="Click to start slide show" onclick="loop()">&lt;br />&lt;br />
+    &lt;/div>
+    &lt;/div>    
+    </pre>
+    <hr />
+    </div>
+    <footer>
+        <p>
+            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/2.html">HTML Page</a>
+            , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.js">js Page</a>
+            , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.css">css Page</a>
+        </p>
+    </footer>
+
+</body>
+</html>
+<script>
+var mySlideShow = document.getElementById('mySlideShow');
+    var myPics = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg', 'f.jpg', 'g.jpg', 'h.jpg', 'i.jpg', 'j.jpg', 'k.jpg', 'l.jpg'];
+    var PicCount = myPics.length;
+    var i = 0;
+    function loop() {
+        if (i > (PicCount - 1)) {
+            i = 0;
+        }
+        mySlideShow.innerHTML = '<img src="../../images/' + myPics[i] + '">';
+        i++;
+        loopTimer = setTimeout('loop()', 1200);
+    }
+</script>
+

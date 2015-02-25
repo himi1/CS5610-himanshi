@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../Experiments/misc/miscstory.txt	What is next?
+1.html		Random Captcha Genrator
+2.html	    Images SlideShow using JS
+3.html		Mouse Listener
+4.html		Get Location
+5.html		Animations using CSS Keyframes

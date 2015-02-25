@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animations</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href="5.css" rel="stylesheet" />
+</head>
+<body class="container">
+    <h2>Animations using CSS Keyframes</h2><hr />
+    <div id="animation">
+		Animation using Keyframes
+    </div>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I learnt using css animation utility keyframes
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        CSS
+        <pre>
+        #animation
+        {
+            text-align:center;
+            width:400px;
+            height:150px;
+            background:#000000;
+            color:#ffffff;
+            position:relative;
+            font-weight:bold;
+            font-size:40px;
+            padding:10px;
+            animation:animation 5s infinite;
+            -moz-animation:animation 5s infinite;
+            -webkit-animation:animation 5s infinite;
+            border-radius:5px;
+            -webkit-border-radius:5px;
+        }
+          
+        @keyframes animation
+        {
+            0%   {left:0px;}
+            25%  {left:200px; background-color: green;}
+            50%  {left:400px; background-color: red;}
+            75%  {left:600px; background-color: yellow;}
+            100% {left:0px; background-color: pink;}
+        }
+          
+        @-webkit-keyframes animation
+        {
+            0%   {left:0px;}
+            25%  {left:200px; background-color: green; margin-top: 50px;}
+            50%  {left:400px; background-color: yellow;margin-top: 0px;}
+            75%  {left:600px; background-color: red;margin-top: 50px;}
+            100% {left:0px; background-color: pink;}
+        }
+          
+        @-moz-keyframes animation
+        {
+            0%   {left:0px;}
+            25%  {left:200px; background-color: green;}
+            50%  {left:400px; background-color: red;}
+            75%  {left:600px; background-color: yellow;}
+            100% {left:0px; background-color: pink;}
+        }    
+    </pre>
+        <hr />
+    </div>
+    <footer>
+        <p>
+            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/5.html">HTML Page</a>
+            , <a href="../../fileview/Default.aspx?~/Experiments/misc/5.css">CSS Page</a>
+        </p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/">w3schools</a></p>
+    </footer>
+</body>
+</html>

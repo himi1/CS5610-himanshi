@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get Location</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="5.js"></script>
+
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    var myCenter = new google.maps.LatLng(51.508742, -0.120850);
+    var marker;
+
+    function initialize() {
+        var mapProp = {
+            center: myCenter,
+            zoom: 5,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: myCenter,
+            animation: google.maps.Animation.BOUNCE
+        });
+
+        marker.setMap(map);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body class="container">
+    <h2>Get Location on Gmaps</h2><hr />
+    <div id="getLocation">
+        <h3>Click the button to get your position.</h3>
+        <div id="googleMap" style="width:500px;height:380px;"></div>
+    </div>
+        
+   
+    <footer>
+        <p>
+            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/4.html">HTML Page</a>
+            , <a href="../../fileview/Default.aspx?~/Experiments/misc/4.js">js Page</a>
+        </p>
+        <p><strong>References:</strong><a href="http://www.w3schools.com/html/html5_geolocation.asp">w3schools</a></p>
+
+    </footer>
+</body>
+</html>
+

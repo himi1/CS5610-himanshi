@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function setNewURL(obj) {
+            var youTubeWidgetToChange = $(obj).parent().parent().parent().parent().parent();
+            var youTubeUrlToLoad = $(obj).parent().parent().find('.youtubeUrl').val();
+            //console.log("URL : " + youTubeUrlToLoad);
+            var currentVideoLink = youTubeWidgetToChange.find('.youtubeVideo').attr('src');
+            //console.log("Current video : " + currentVideoLink);
+            var splitUrl = youTubeUrlToLoad.split("=");
+            var urlAppend = splitUrl[splitUrl.length - 1];
+            //console.log("Append URL : " + urlAppend);
+            var finalUrl = "//www.youtube.com/embed/" + urlAppend;
+            youTubeWidgetToChange.find('.youtubeVideo').attr('src', finalUrl);
+        }</script>
+</head>
+<body>
+    <div class="youtubeStyler">
+                            <img src="../images/play.png" class="playicon" onclick="setNewURL(this);" />
+           
+                <iframe class="youtubeVideo" src="//www.youtube.com/embed/tGl1iPaEr0c" frameborder="0"></iframe>
+        </div>
+
+</body>
+</html>

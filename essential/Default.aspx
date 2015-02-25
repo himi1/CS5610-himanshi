@@ -87,6 +87,11 @@
                         <hr />
 
                         <img style="max-width:100%" src="images/MyImage.jpg" />
+                        <img style="max-width:100%" src="images/1.jpg" />
+                        <img style="max-width:100%" src="images/2.jpg" />
+                        <img style="max-width:100%" src="images/3.jpg" />
+                        <img style="max-width:100%" src="images/4.jpg" />
+                        <img style="max-width:100%" src="images/5.jpg" />
 
                         <p>
                             My name is <b>Himanshi Bhardwaj</b>.
