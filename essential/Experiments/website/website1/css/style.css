@@ -1,0 +1,86 @@
+﻿.heading{
+    font-family: 'Times New Roman', Times, serif;
+	color: #00aeef;
+}
+
+.subheading{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	
+}
+
+body {
+	font-family: Dosis-Bold;
+	font-size: 17px;
+}
+
+img {
+	border: none;
+	outline: none;
+}
+
+.clear {
+	clear: both;
+}
+
+#input{
+	margin-top: -35px;
+}
+
+#inputField{
+	border: none;
+	outline: none;
+	font-size: 70px;
+	float: left;
+	width: 700px;
+	border-left: 1px solid;
+	margin-top: 54px;
+	margin-left: 27px;
+	font-family: 'Times New Roman', Times, serif;
+	color: #383838;
+    text-transform: uppercase;
+}
+
+#textWrap{
+	margin-top: 211px;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+#boxesWrap{
+	width: 1000px;
+	position: relative;
+	top: 20px;
+	left: -19px;
+	display: none;
+	margin-bottom: 40px;
+}
+
+.topBox{
+	width: 500px auto;
+	height: 50px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #0087e4;
+	margin-bottom: 2px;
+	vertical-align: middle;
+	line-height: 52px;
+	font-family: 'Times New Roman', Times, serif;
+	color: white;
+	font-size: 24px;
+}
+
+.topBox:hover {
+	background-color: #00ff21;
+	cursor: pointer;
+}

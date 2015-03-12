@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Node.js JSON Response</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body class="container">
+    <h2>Displaying JSON Response from NodeJS on OpenShift</h2>
+    <hr />
+    <h3>Static HTML Page</h3>
+    <p><a href="http://himanshi-bhardwaj1.rhcloud.com/api/courses" target="_blank">Click here to see the output</a></p>
+    <hr />
+    <img style="max-width:100%" src="images/3.png" />
+
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>In this experiment, I have accessed JSON response from server.js</p>
+        <p>I used <br />
+        <code>app.get("/api/courses", function (req, res) {res.json(courses); });</code><br />
+        to get response from server. <code>res.json</code> is used to send response in JSON format.</p>
+        <hr />
+        <h4>Code Snippet</h4>
+        server.js
+        <pre>
+// courses - List of Courses
+var courses = [
+{ courseName: "CS5610", desc: "Web Development", hpw: 20 },
+{ courseName: "CS5010", desc: "PDP", hpw: 40 },
+{ courseName: "CS5800", desc: "Algorithms", hpw: 15 },
+{ courseName: "CS5500", desc: "Managing Software Development", hpw: 10 },
+{ courseName: "CS5600", desc: "Computer Systems", hpw: 25 },
+{ courseName: "CS5400", desc: "Principles of Programming Languages", hpw: 20 },
+{ courseName: "CS6410", desc: "Compilers", hpw: 25 },
+{ courseName: "CS6515", desc: "Software Development", hpw: 20 },
+{ courseName: "CS6510", desc: "Advanced Software Development", hpw: 20 }
+];
+        
+// get
+app.get("/api/courses", function (req, res) {
+res.json(courses);
+});
+        </pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/3.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="https://www.youtube.com/user/jannunzi/videos" target="_blank">Prof. Jose's Video Lectures</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

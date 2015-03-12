@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Static HTML</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body class="container">
+    <h2>Displaying data from Static HTML Page using NodeJS server on OpenShift</h2>
+    <hr />
+    <h3>Static HTML Page</h3>
+    <p><a href="http://himanshi-bhardwaj1.rhcloud.com/1.html" target="_blank">Click here to see the output</a></p>
+    <hr />
+    <img style="max-width:100%" src="images/2.png"/>
+
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>In this experiment, I have created a static HTML page and loaded it on the remote server at OpenShift</p>
+        <p>I used <code>app.use(express.static(__dirname + '/public'));</code>to bind 'public' folder with all requests for static content.</p>
+        <hr/>
+        <h4>Code Snippet</h4>
+        server.js
+        <pre>
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+app.listen(port, ip);
+       </pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/2.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="https://www.youtube.com/user/jannunzi/videos" target="_blank">Prof. Jose's Video Lectures</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -85,19 +85,14 @@
                         </p>
 
                         <hr />
-
                         <img style="max-width:100%" src="images/MyImage.jpg" />
-                        <img style="max-width:100%" src="images/1.jpg" />
-                        <img style="max-width:100%" src="images/2.jpg" />
-                        <img style="max-width:100%" src="images/3.jpg" />
-                        <img style="max-width:100%" src="images/4.jpg" />
-                        <img style="max-width:100%" src="images/5.jpg" />
-
                         <p>
                             My name is <b>Himanshi Bhardwaj</b>.
                             I am currently pursuing Masters of
                             Science at Northeastern University, MA. I completed my Undergrad from Ambedkar Institue of Technology, Delhi, India in July, 2013. Since then I had been working at Samsung Research and Development Institute, Noida as a Software Enginner. I left Samsung in December 2014 and came here to become a proud Husky.
                             <br />
+                            <img style="max-width:100%" src="images/e.jpg" />
+                            <img style="max-width:100%" src="images/a.jpg" />
                         </p>
 
                         <hr />

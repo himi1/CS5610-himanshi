@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Setup NodeJS server on OpenShift</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body class="container">
+    <h2>Setup NodeJS server on OpenShift</h2>
+    <hr />
+    <p><h4>INSTALLING NODEJS</h4></p>
+    <ul>
+        <li>Install nodejs from <a href="http://nodejs.org" target="_blank">here</a></li>
+        <li>Add your nodejs home to <code>PATH </code>env variable</li>
+        <li>Create a new directory to put all your server code in</li>
+        <li>In the same directory install express using <code>npm install express</code></li>
+        <li>List of other modules that can be installed using nmp are available <a href="http://www.npmjs.com" target="_blank">here</a></li>
+    </ul>
+
+    <p><h4>OPENSHIFT SETUP for NodeJS</h4></p>
+    <ul>
+        <li>Sign up for an account in Openshift</li>
+        <li>Select Nodejs from available list</li>
+        <li>Complete the form and create a website by the given domain name and namespace</li>
+        <li>Follow the instructions given 
+        <a href="https://developers.openshift.com/en/getting-started-windows.html" target="_blank">here</a> 
+        to prepare your machine to be able to make changes to your application</li>
+        <li>Inside your server application directory, create a file called <code>.gitignore</code>,
+         and add <code>node_modules</code> in it, inorder to not track it in GIT.</li>
+    </ul>
+    <hr />
+    <h2>Demo Page on rhcloud</h2>
+    <p><a href="http://himanshi-bhardwaj1.rhcloud.com/" target="_blank">Click here to see the output</a></p>
+    <hr />
+    <img style="max-width:100%" src="images/1.png" />
+
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have created a basic page using server.js</p>
+            <ul>
+                <li>
+                    <code>
+                        var express = require('express');
+                    </code><br />
+                    <code>
+                        var app = express();
+                    </code>
+                    <p>require is used to include express into the nodejs server</p>
+                </li>
+                <li><p><code>app.use(express.static(__dirname + '/public'));</code> is used to bind 'public' folder with all requests for static content.</p></li>
+                <li><p><code>app.get()</code> is used to bind a response to a <code>GET</code> request with the matching URL.</p></li>
+                <li><p>Finally <code>app.listen(port, ip)</code> makes the server listen to incoming requests on given ip address and port number.</p></li>
+            </ul>
+        <hr/>
+        <h4>Code Snippet</h4>
+        server.js
+        <pre>
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function (req, res) {
+res.send('Hello. Welcome to my OpenShift Page.');
+});
+
+var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+app.listen(port, ip);
+        </pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/1.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="https://www.youtube.com/user/jannunzi/videos" target="_blank">Prof. Jose's Video Lectures</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

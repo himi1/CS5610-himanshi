@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Nodejs add, edit and delete</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- AngularJS -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+<body class="container">
+    <h2>Adding, editing and deleting of entries from server.js using NodeJS on OpenShift</h2>
+    <hr />
+    <h3>Courses in CS</h3>
+    <p><a href="http://himanshi-bhardwaj1.rhcloud.com/" target="_blank">Click here to see the output</a></p>
+    <hr />
+    <img style="max-width:100%" src="images/4.png" />
+
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>In this experiment, I have implemented Adding, edition and deleting of data from server.js</p>
+        <p>I used:
+        <ul>
+            <li><code>app.get</code>to get response from the server.</li>
+            <li><code>app.post</code>to add the entries on the server.</li>
+            <li><code>app.put</code>to edit the entries on the server.</li>
+            <li><code>app.delete</code>to splice entries from the server.</li>
+        </ul>
+        </p>
+           <hr />
+        <h4>Code Snippet</h4>
+        server.js
+        <pre>
+// get
+app.get('/', function (req, res) {
+    res.send('Hello. Welcome to my OpenShift Page.');
+});
+app.get("/api/courses", function (req, res) {
+    res.json(courses);
+});
+app.get("/api/courses/:idx", function (req, res) {
+    res.json(courses[req.params.idx]);
+});
+
+// Delete
+app.delete("/api/courses/:id", function (req, res) {
+    courses.splice(req.params.id, 1);
+    res.json(courses);
+});
+
+// Post
+app.post("/api/courses", function (req, res) {
+    courses.push(req.body);
+    res.json(courses);
+});
+
+// Put
+app.put("/api/courses/:id", function (req, res) {
+    courses[req.params.id] = req.body;
+    res.json(courses);
+});
+
+app.listen(port, ip);
+        </pre>
+        index.js
+        <pre>
+var app = angular.module("NodeApplication", []);
+
+app.controller("NodeController", function ($scope, $http) {
+    $scope.selectedIndex = null;
+    $scope.courseDetails = [];
+
+// get
+    $http.get("/api/courses")
+    .success(function (response) {
+        $scope.courses = response;
+    });
+
+// save
+    $scope.savecourse = function (course) {
+        $http.put("/api/courses/" + $scope.selectedIndex, course).
+        success(function (response) {
+            $scope.courses = response;
+        });
+    }
+
+// edit
+    $scope.editcourse = function (index) {
+        $scope.courseDetails = [];
+        if ($scope.selectedIndex === index) {
+            $scope.selectedIndex = null;
+            $scope.course = null;
+        }
+        else {
+            $scope.selectedIndex = index;
+            $scope.course = $scope.courses[index];
+        }
+    }
+
+// add
+    $scope.addcourse = function (course) {
+        $http.post("/api/courses", course)
+        .success(function (response) {
+            $scope.courses = response;
+        });
+    }
+
+// delete
+    $scope.deletecourse = function (index) {
+       $http.delete("/api/courses/" + index)
+        .success(function (response) {
+            $scope.courses = response;
+        });
+    }
+});
+        </pre>
+        index.html
+        <pre>
+&lt;>&lt;input ng-model="course.courseName" class="form-control" />&lt;/td>
+&lt;td>&lt;input ng-model="course.desc" class="form-control" />&lt;/td>
+&lt;td>&lt;input ng-model="course.hpw" class="form-control" />&lt;/td>
+            &lt;td>
+&lt;button ng-click="savecourse(course)" class="btn btn-xs btn-primary pull-right">
+&lt;span class="glyphicon glyphicon-ok" />
+&lt;/button>
+&lt;button ng-click="addcourse(course)" class="btn btn-xs btn-success pull-right">     
+&lt;span class="glyphicon glyphicon-plus" />
+&lt;/button>
+&lt;/td>
+
+&lt;tr ng-repeat="course in courses">
+&lt;td>{{course.courseName}}&lt;/td>
+&lt;td>{{course.desc}}&lt;/td>
+&lt;td>{{course.hpw}}&lt;/td>
+&lt;td>
+&lt;button ng-click="editcourse($index)" class="btn btn-xs btn-warning pull-right">
+&lt;span class="glyphicon glyphicon-pencil" />
+&lt;/button>
+&lt;button ng-click="deletecourse($index)" class="btn btn-xs btn-danger pull-right">
+&lt;span class="glyphicon glyphicon-remove" />
+&lt;/button>
+&lt;/td>
+&lt;/tr>
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/4.html">This HTML Page</a><br />
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/code/server.js">server.js</a><br />
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/code/index.js">index.js</a><br />
+                <a href="../../fileview/Default.aspx?~/Experiments/nodeJS/code/index.html">index.html</a><br />
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+            <a href="https://www.youtube.com/user/jannunzi/videos" target="_blank">Prof. Jose's Video Lectures</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

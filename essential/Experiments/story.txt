@@ -1,10 +1,11 @@
 ﻿../story/whatisnext.htm?../Experiments/story.txt				What is next?
-../story/index.htm?../Experiments/HTML/htmlstory.txt			WEEK 1 - HTML
-../story/index.htm?../Experiments/css/cssstory.txt				WEEK 2 - CSS
-../story/index.htm?../Experiments/bootstrap/bootstrapstory.txt	WEEK 2 - Bootstrap
-../story/index.htm?../Experiments/jQuery/jQuerystory.txt   		WEEK 3 - jQuery
-../story/index.htm?../Experiments/jQueryUI/jQueryuistory.txt	WEEK 3 - jQueryUI
-../story/index.htm?../Experiments/angularJS/angularJSstory.txt  WEEK 4 - AngularJS
-../story/index.htm?../Experiments/misc/miscstory.txt			WEEK 5 - Miscellaneous(JS+CSS+Bootstrap)
+../story/index.htm?../Experiments/HTML/htmlstory.txt			WEEK 1,2 - HTML
+../story/index.htm?../Experiments/css/cssstory.txt				WEEK 3 - CSS
+../story/index.htm?../Experiments/bootstrap/bootstrapstory.txt	WEEK 3 - Bootstrap
+../story/index.htm?../Experiments/jQuery/jQuerystory.txt   		WEEK 4 - jQuery
+../story/index.htm?../Experiments/jQueryUI/jQueryuistory.txt	WEEK 4 - jQueryUI
+../story/index.htm?../Experiments/angularJS/angularJSstory.txt  WEEK 5 - AngularJS
+../story/index.htm?../Experiments/misc/miscstory.txt			WEEK 6 - Miscellaneous(JS+CSS+Bootstrap)
+../story/index.htm?../Experiments/nodeJS/nodejsstory.txt		WEEK 7 - Node JS
 
 
