@@ -171,7 +171,7 @@ p {
     width: 23.8%;
 }
 
-/*  GO FULL WIDTH BELOW 880 PIXELS */
+/*  GO FULL WIDTH BELOW 920 PIXELS */
 @media only screen and (max-width: 920px) {
     .col {
         margin: 1% 0 1% 0%;
@@ -186,7 +186,7 @@ p {
     }
 }
 
-/*  GO FULL WIDTH BELOW 440 PIXELS */
+/*  GO FULL WIDTH BELOW 490 PIXELS */
 @media only screen and (max-width: 490px) {
     .col {
         margin: 1% 0 1% 0%;
