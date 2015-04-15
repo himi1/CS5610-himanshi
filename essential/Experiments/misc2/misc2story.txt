@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../Experiments/misc2/misc2story.txt	What is next?
+modal.html					Modal Sign In
+placeautocomplete.html	    Autocomplete using maps api
+routing.html				Routing
+content_toggle.html			Content Toggle Using AngularJS
+../../Default.aspx			Home Page changes Made

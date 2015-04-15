@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Modal Login window with blurred background AngularJS</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="modal.css" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="js/modal.js"></script>
+
+</head>
+
+<body class="container" ng-app="LoginApp">
+    <h1>Modal Login</h1>
+
+
+    <div ng-controller="LoginCtrl">
+        <button class="btn btn-primary" ng-click="toggleModal()">Click here to login!</button>
+        <modal title="Login form" visible="showModal">
+            <form role="form">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text-muted glyphicon glyphicon-user"></i>
+                        </span>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">
+                            <i class="text text-muted glyphicon glyphicon-asterisk"></i>
+                        </span>
+                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </modal>
+    </div>
+    <hr />
+        <h2>References</h2>
+    <hr />
+    <a href="http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/" target="_blank">Blog</a> <br />
+    <a href="http://www.mircozeiss.com/shake-that-login-form-with-angularjs/" target="_blank">Another blog</a> <br />
+</body>
+</html>

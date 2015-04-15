@@ -1,3 +1,6 @@
 ﻿../../story/whatisnext.htm?../Experiments/css/cssstory.txt	What is next?
 css1.html	CSS Basics
-css2.html	Responsve Designs
+css2.html	Responsive Designs
+css3.html	Search box animation using CSS
+css4.html	Slider Message using CSS
+css5.html	Hover Changes using CSS

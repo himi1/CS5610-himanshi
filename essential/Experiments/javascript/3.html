@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Logical Operators, Comparisons and Array Operations</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="3.js"></script>
+   
+</head>
+<body class="container">
+    <div class="wrapper">
+        <header>
+            <h1>JavaScript Logical Operators, Comparisons and Array Operations</h1>
+            <hr />
+            <h2>Open your console to view operations.</h2>
+            <hr />
+        </header>
+        <p>Logical Operators</p>
+        <pre><code>
+    var lo;
+    lo = !true;
+    console.log('!true' + ' =', lo);
+    
+    lo = true && true;
+    console.log('true && true' + ' =', lo);
+    lo = true && false;
+    console.log('true && false' + ' =', lo);
+    
+    lo = false && true;
+    console.log('false && true' + ' =', lo);
+    
+    lo = false && false;
+    console.log('false && false' + ' =', lo);
+    lo = true || true;
+    console.log('true || true' + ' =', lo);
+    lo = true || false;
+    console.log('true || false' + ' =', lo);
+    
+    lo = false || true;
+    console.log('false || true' + ' =', lo);
+    
+    lo = false || false;
+    console.log('false || false' + ' =', lo);
+  </code></pre>
+
+        <p>Comparison</p>
+        <pre><code>
+    var lo;
+    lo = 1 > 2;
+    console.log('1 > 2' + ' =', lo);
+    lo = 1 < 2;
+    console.log('1 < 2' + ' =', lo);
+    lo = 1 == 2;
+    console.log('1 == 2' + ' =', lo);
+    lo = 1 == 1;
+    console.log('1 == 1' + ' =', lo);
+    lo = 1 === 1;
+    console.log('1 === 1' + ' =', lo);
+    lo = 1 === '1';
+    console.log('1 === "1"' + ' =', lo);
+    lo = 1 != 2;
+    console.log('1 != 2' + ' =', lo);
+    lo = 1 !== '2';
+    console.log('1 != "2"' + ' =', lo);
+    
+    lo = 1 != 2;
+    console.log('1 != 2' + ' =', lo);
+    lo = 1 >= 2;
+    console.log('1 >= 2' + ' =', lo);
+    lo = 1 <= 2;
+    console.log('1 <= 2' + ' =', lo);
+  </code></pre>
+
+        <p>Arrays</p>
+        <pre><code>
+    var a1, a2, a3, a4, a5;
+    a1 = [];
+    console.log('a1 is typof', typeof(a1));
+    a1 = ['js', 'is', 'amazing'];
+    console.log('add values to the array', a1);
+    
+    console.log('number of values in an array', a1.length);
+    console.log('the first value is', a1[0]);
+    console.log('the last value is', a1[ a1.length - 1 ]);
+    a1.pop(0);
+    console.log('remove the last value -', a1);
+    a1.shift();
+    console.log('remove the first value -', a1);
+    a1.unshift('javascript');
+    console.log('add new value to the front -', a1);
+    
+    a1.push('super', 'awesome');
+    console.log('add new value to the end -', a1);
+    a2 = a1.lastIndexOf("super");
+    console.log('Find the position of super -', a2);
+    a1[ a2 ] = 'f#ck@%*'
+    console.log('Replace the the value of super -', a1);
+    a1.sort();
+    console.log('sort the array -', a1);
+    a1.reverse();
+    console.log('reverse the array -', a1);
+    a3 = a1.slice(0,2);
+    console.log('remove the first two values -', a3);
+    a4 = a1.slice(2);
+    console.log('remove the last two values -', a4);
+    a1 = a3.concat(a4);
+    console.log('glue the rwo arrays together -', a1);
+    
+    a1 = a1.join(' ');
+    console.log('join the rwo arrays -', a1);
+  </code></pre>
+  </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+﻿canvas {display: inline;
+        height: 200px;
+        
+}
+
+html {
+    background: url(../img/intro_bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Styling by Prof. Rasala */
+ul.master_navigation {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+    margin: 0.5em 0;
+    padding: 0;
+}
+
+    ul.master_navigation li {
+        display: inline-block;
+        padding: 0 0.5%;
+    }
+
+a {
+    color: #dad8d4;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    a:visited {
+        color: #88f;
+    }
+
+    a:hover {
+        color: #08f;
+    }
+
+p {
+    text-align: justify;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.flip_boxes {
+  text-align: center;
+}
+
+.flip_boxes div {
+  display: inline-block;
+  text-align: left;
+}
+
+.displaypic {
+    border: 2px solid grey;
+}
+
+.intro {
+    padding-left:20px;
+    padding-right:20px;
+    align-self: center;
+    align-content: center;
+    color: #dad8d4;
+}
+
+.back {
+   background: transparent;
+}
+
+.xx_font {
+    font-size:xx-large;
+}
+
+.x_font {
+    font-size:23px;
+}
+
+.justify {
+    text-align:justify;
+}
+
+@media screen {
+    body {
+        padding: 0;
+        height: 100%;
+        /*background-color: teal;*/
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    body {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    body {
+        max-width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1px) and (max-width: 480px) {
+    body {
+        max-width: 100%;
+        height: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+* SECTIONS */ .section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+
+    .col:first-child {
+        margin-left: 0;
+    }
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1; /* For IE 6/7 */
+}
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+    width: 100%;
+}
+
+.span_3_of_4 {
+    width: 74.6%;
+}
+
+.span_2_of_4 {
+    width: 49.2%;
+}
+
+.span_1_of_4 {
+    width: 23.8%;
+}
+
+/*  GO FULL WIDTH BELOW 880 PIXELS */
+@media only screen and (max-width: 920px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }
+
+    .span_1_of_4, .span_2_of_4 {
+        width: 50%;
+    }
+
+    .span_3_of_4, .span_4_of_4 {
+        width: 100%;
+    }
+}
+
+/*  GO FULL WIDTH BELOW 440 PIXELS */
+@media only screen and (max-width: 490px) {
+    .col {
+        margin: 1% 0 1% 0%;
+    }
+
+    .span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 {
+        width: 100%;
+    }
+}
+
+
+/*flipboards*/
+.flipcard-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 150px;
+}
+
+.flipcard {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    perspective: 500px;
+}
+
+    .flipcard.v:hover .front, .flipcard.v.flip .front {
+        transform: rotateX(180deg);
+    }
+
+    .flipcard.v:hover .back, .flipcard.v.flip .back {
+        transform: rotateX(0deg);
+    }
+
+    .flipcard.v .back {
+        transform: rotateX(-180deg);
+    }
+
+    .flipcard.h:hover .front, .flipcard.h.flip .front {
+        transform: rotateY(180deg);
+    }
+
+    .flipcard.h:hover .back, .flipcard.h.flip .back {
+        transform: rotateY(0deg);
+    }
+
+    .flipcard.h .back {
+        transform: rotateY(-180deg);
+    }
+
+    .flipcard .front, .flipcard .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        transition: all 0.5s ease-in;
+        color: white;
+       /* background-color: rgba(255,0,0,0.5); #dad8d4; /*#808080;*/
+        padding: 10px;
+        backface-visibility: hidden;
+    }
+

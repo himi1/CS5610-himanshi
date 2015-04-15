@@ -1,0 +1,57 @@
+﻿
+ul.master_navigation {
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+    margin: 0.5em 0;
+    padding: 0;
+}
+ ul.master_navigation li {
+        display: inline-block;
+        padding: 0 0.5%;
+    }
+
+ .displaypic {
+    border: 2px solid grey;
+}
+
+.intro {
+    padding-left:20px;
+    padding-right:20px;
+    align-self: center;
+    align-content: center;
+    color: #dad8d4;
+    text-align:center;
+}
+
+/*parallax effect contents*/
+.menu {
+    width: 80%;
+    height: 5em;
+    margin-top: 1em;
+    left: 50%;
+    margin-left: -40%;
+    position: fixed;
+    background: orange;
+    z-index: 10;
+}
+
+.image {
+    padding-top: 300px;
+    background-color: red;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: 5;
+    top: 0px;
+    -webkit-background-size: cover;
+}
+
+.container-below {
+    background-image: url(../../homepage/img/intro_bg.jpg);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 1000px;
+    background-color: darkblue;
+}

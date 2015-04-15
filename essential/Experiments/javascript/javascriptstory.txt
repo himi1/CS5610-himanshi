@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../Experiments/bootstrap/bootstrapstory.txt	What is next?
+1.html		Prompt using JavaScript
+2.html	    JavaScript Basics Operations
+3.html		JavaScript Logical Operators, Comparisons and Array Operations
+4.html		JavaScript If-Else, Switch and Loop
+5.html		Image Slider using JavaScript
