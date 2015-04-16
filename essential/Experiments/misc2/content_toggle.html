@@ -25,7 +25,6 @@
             </select>
         </p>
 
-
         <div class="container">
             <article ng-show="selection == 'content1'">
                 <h2 class="h2">Content #1</h2>
@@ -36,6 +35,49 @@
                 <p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </article>
         </div>
+    </div>
+
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have implemented content toggle based on selected option.
+            I have used AngularJs for the same.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+<pre>
+    &lt;div class=&quot;page-wrap&quot; ng-app&gt;
+        &lt;p&gt;
+            &lt;strong&gt;Choose what to display:&lt;/strong&gt;
+            &lt;select class=&quot;content-select ng-valid ng-dirty&quot; ng-model=&quot;selection&quot;&gt;
+                &lt;option value=&quot;content1&quot;&gt;Content #1&lt;/option&gt;
+                &lt;option value=&quot;content2&quot;&gt;Content #2&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/p&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;article ng-show=&quot;selection == 'content1'&quot;&gt;
+                &lt;h2 class=&quot;h2&quot;&gt;Content #1&lt;/h2&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article ng-show=&quot;selection == 'content2'&quot;&gt;
+                &lt;h2 class=&quot;h2&quot;&gt;Content #2&lt;/h2&gt;
+                &lt;p&gt;Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p> 
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/misc2/content_toggle.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
     </div>
 </body>
 </html>

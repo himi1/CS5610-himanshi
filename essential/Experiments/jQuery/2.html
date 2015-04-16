@@ -2,11 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>jQuery HTML</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="2.js"></script>
     <link href="css.css" rel="stylesheet" />
 </head>
-<body>
+<body class="container">
     <h2>Implementation of jQuery HTML</h2>
     <hr />
     <h3>Get values using jQuery</h3>
@@ -46,16 +55,86 @@
     <button id="button13">Click button to remove italic text only</button><br />
     <button id="button14">Click button to remove bold text only</button>
 
-    <div id="myfooter">
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I implemented the following functionalities:
+            <ul>
+                <li>Get values using jQuery</li>
+                <li>Set values using jQuery</li>
+                <li>Add values using jQuery</li>
+                <li>Remove values using jQuery</li>
+            </ul>
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        JS
+<pre>
+$(document).ready(function () {
+    $("#button1").click(function () {
+        alert("Text: " + $("#p1").text());
+    });
+    $("#button2").click(function () {
+        alert("HTML: " + $("#p1").html());
+    });
+    $("#button3").click(function () {
+        alert("Value: " + $("#input").val());
+    });
+    $("#button4").click(function () {
+        alert($("#thispage").attr("href"));
+    });
+    $("#button5").click(function () {
+        $("#p2").text("Changed text on click");
+    });
+    $("#button6").click(function () {
+        $("#p2").html(function () {
+            return "<i>Hello</i> <b>world</b>";
+        });
+    });
+    $("#button7").click(function () {
+        $("#p3").append(" <i>Append text</i>");
+    });
+    $("#button8").click(function () {
+        $("#p3").prepend(" <i>Prepend text</i>");
+    });
+    $("#button9").click(function () {
+        var txt1 = "<b>Created this text using HTML<b>";              // Create text with HTML
+        var txt2 = $("<i></i>").text("Created this text using jQuery");  // Create text with jQuery
+        var txt3 = document.createElement("p");
+        txt3.innerHTML = "Created this text using DOM";               // Create text with DOM
+        $("#app").append(txt1, txt2, txt3);     // Append new elements
+    });
+    $("#button10").click(function () {
+        $("#p4").before("<b>used .before</b>");
+    });
+    $("#button11").click(function () {
+        $("#p4").after("<i> used .after</i>");
+    });
+    $("#button12").click(function () {
+        $("#p5").remove();
+    });
+    $("#button13").click(function () {
+        $("#p6").remove(".italic");
+    });
+    $("#button14").click(function () {
+        $("#p6").remove(".bold");
+    });
+});
+</pre>
+        <hr />
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/jQuery/2.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/jQuery/2.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQuery/2.js">jQuery Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQuery/css1.css">CSS Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/jquery/default.asp">w3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/jquery/default.asp">w3schools</a>
+            </p>
         </footer>
-        </div>
-
+    </div>
 </body>
 </html>

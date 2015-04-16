@@ -1,6 +1,5 @@
 ﻿
 document.addEventListener('DOMContentLoaded', function () {
-    // sslider = Simple SLIDER
     function sslider() {
 
         var current = 0,
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 reset();
             }
         }, 3000);
-    } // end
+    } 
     sslider();
 });
-//@ sourceURL=pen.js

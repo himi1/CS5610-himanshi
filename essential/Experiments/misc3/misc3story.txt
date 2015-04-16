@@ -1,6 +1,6 @@
 ﻿../../story/whatisnext.htm?../Experiments/misc3/misc3story.txt	What is next?
 flip_boxes.html				Flip Boxes Used on Home Page
-parallax scrolling.html	    Parrallax Scrolling implemented on Home Page
+parallax.html				Parrallax Scrolling implemented on Home Page
 rain.html					Rain Shower using CSS and JS
-ripple effect.html			Ripple Effect - Checkbox and Radio Buttons
+ripple_effect.html			Ripple Effect - Checkbox and Radio Buttons
 ../../whoami.aspx			Changes made on About me page

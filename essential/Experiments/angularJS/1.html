@@ -2,10 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AngularJS basics</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="1.js"></script>
 </head>
-<body>
+<body class="container">
     <h2>Angular JS Basics</h2><hr />
     <h3>AngularJS Directives</h3>
     <div ng-app="" ng-init="FirstName='Himanshi'" ng-controller="personController">
@@ -18,11 +22,11 @@
         <br>
         Full Name: {{firstName + " " + lastName}}
     </div>
-    <div>
-    <hr />
-        <h4>About the experiment</h4>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
         <p>
-            This experiment is performed to learn AngularJS basics<br />
+            I did this experiment to learn AngularJS basics.<br />
             AngularJS starts automatically when the web page has loaded.
             The ng-app directive tells AngularJS that the &lt;div>
             element is the "owner" of an AngularJS application.
@@ -34,7 +38,7 @@
         </p>
         <hr />
         <h4>Code Snippet</h4>
-        Javascript :
+        JS
         <pre>
         &lt;script>
        function personController($scope) {
@@ -42,9 +46,8 @@
         $scope.lastName = "Last name";
         };
         &lt;/script>
-            </pre>
-        <hr />
-        HTML :
+        </pre>
+        HTML
         <pre>
         &lt;div ng-app="" ng-init="FirstName='Himanshi'" ng-controller="personController">
         &lt;p>The name is &lt;span ng-bind="FirstName">&lt;/span>&lt;/p>
@@ -55,15 +58,17 @@
         Full Name: {{firstName + " " + lastName}}
         &lt;/div>
         </pre>
-    <hr />
-    </div>
-    <div id="myfooter" class="ui-widget-content">
+        <hr />
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/1.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/angularJS/1.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/1.js">jQuery Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_intro.asp">w3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/angular/angular_intro.asp">w3schools</a>
+            </p>
         </footer>
     </div>
 </body>

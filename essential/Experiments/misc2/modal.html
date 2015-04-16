@@ -45,10 +45,75 @@
             </form>
         </modal>
     </div>
-    <hr />
-        <h2>References</h2>
-    <hr />
-    <a href="http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/" target="_blank">Blog</a> <br />
-    <a href="http://www.mircozeiss.com/shake-that-login-form-with-angularjs/" target="_blank">Another blog</a> <br />
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have implemented a modal login page.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+<pre>
+var app = angular.module('LoginApp', []);
+app.controller('LoginCtrl', function ($scope) {
+    $scope.showModal = false;
+    $scope.toggleModal = function () {
+        $scope.showModal = !$scope.showModal;
+    };
+});
+app.directive('modal', function () {
+    return {
+        template: '&lt;div class=&quot;modal fade&quot;&gt;' +
+            '&lt;div class=&quot;modal-dialog&quot;&gt;' +
+              '&lt;div class=&quot;modal-content&quot;&gt;' +
+                '&lt;div class=&quot;modal-header&quot;&gt;' +
+                  '&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;modal&quot; aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/button&gt;' +
+                  '&lt;h4 class=&quot;modal-title&quot;&gt;{{ title }}&lt;/h4&gt;' +
+                '&lt;/div&gt;' +
+                '&lt;div class=&quot;modal-body&quot; ng-transclude&gt;&lt;/div&gt;' +
+              '&lt;/div&gt;' +
+            '&lt;/div&gt;' +
+          '&lt;/div&gt;',
+        restrict: 'E',
+        transclude: true,
+        replace: true,
+        scope: true,
+        link: function postLink(scope, element, attrs) {
+            scope.title = attrs.title;
+            scope.$watch(attrs.visible, function (value) {
+                if (value == true)
+                    $(element).modal('show');
+                else
+                    $(element).modal('hide');
+            });
+            $(element).on('shown.bs.modal', function () {
+                scope.$apply(function () {
+                    scope.$parent[attrs.visible] = true;
+                });
+            });
+            $(element).on('hidden.bs.modal', function () {
+                scope.$apply(function () {
+                    scope.$parent[attrs.visible] = false;
+                });
+            });
+        }
+    };
+});
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/misc2/modal.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc2/js/modal.js">JS Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc2/css/modal.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/" target="_blank">Blog</a>
+                , <a href="http://www.mircozeiss.com/shake-that-login-form-with-angularjs/" target="_blank">Another blog</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

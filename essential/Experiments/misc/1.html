@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Random Captcha Generator</title>
+    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <script src="1.js"></script>
    
 
@@ -21,44 +24,52 @@
         <input type="button" class="btn btn-success" value="Create Captcha" onclick="captchacreator(this.form.length.value)"><br /><br />
         <output name="output" typeof="text" size="18"></output><br>
     </form>
-    <div>
-    <hr />
-    <h4>Code Snippet</h4>
-    Javascript:
-    <pre>
-    var keylist = "abcdefghijklmnopqrstuvwxyz@!#$%&*ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
-    var temp = ''
-    function captchacreator(length) {
-    document.captcha.output.value = randomoutput(length)
-    }
-    function randomoutput(length) {
-    temp = ''
-    for (i = 0; i < length; i++)
-        temp += keylist.charAt(Math.floor(Math.random() * keylist.length))
-    return temp
-    }   
-    </pre>
-    <hr />
-    HTML :
-    <pre>
-    &lt;form name="captcha">
-    &lt;b>Enter Captcha Length: &lt;/b>
-    &lt;input type="text" name="length" value="10"> &lt;br />
-    &lt;input type="button" class="btn btn-success" value="Create Captcha" onclick="captchacreator(this.form.length.value)"> 
-    &lt;br /> &lt;br />
-    &lt;output name="output" typeof="text" size="18"> &lt;/output> &lt;br>
-    &lt;/form>
-    </pre>
-    <hr />
-    </div>
-    <footer>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
         <p>
-            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/1.html">HTML Page</a>
-            , <a href="../../fileview/Default.aspx?~/Experiments/misc/1.js">js Page</a>
+            In this experiment, I have created a Random Captcha Generator, which generates a randomly created text.
+            It takes length of captcha to be created as input.
         </p>
-    </footer>
-
-
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript
+        <pre>
+        var keylist = "abcdefghijklmnopqrstuvwxyz@!#$%&*ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789"
+        var temp = ''
+        function captchacreator(length) {
+        document.captcha.output.value = randomoutput(length)
+        }
+        function randomoutput(length) {
+        temp = ''
+        for (i = 0; i < length; i++)
+        temp += keylist.charAt(Math.floor(Math.random() * keylist.length))
+        return temp
+        }   
+        </pre>
+        HTML
+        <pre>
+        &lt;form name="captcha">
+        &lt;b>Enter Captcha Length: &lt;/b>
+        &lt;input type="text" name="length" value="10"> &lt;br />
+        &lt;input type="button" class="btn btn-success" value="Create Captcha" onclick="captchacreator(this.form.length.value)"> 
+        &lt;br /> &lt;br />
+        &lt;output name="output" typeof="text" size="18"> &lt;/output> &lt;br>
+        &lt;/form>
+        </pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/misc/1.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc/1.js">JS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/">W3Schools</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
 

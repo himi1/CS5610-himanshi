@@ -21,5 +21,56 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
     </div>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have implemented a login page using bootstrap. Here, the email id input field is of type email, which gives error
+            if text which is not an email id is entered. The password input field is of type password, in order to display the passwords entered in
+            form of stars(***), to ensure security from people standing nearby.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        HTML
+<pre>
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;form class=&quot;form-signin&quot;&gt;
+            &lt;h2 class=&quot;form-signin-heading&quot;&gt;Please login&lt;/h2&gt;
+            &lt;input type=&quot;email&quot; class=&quot;form-control&quot; name=&quot;username&quot; placeholder=&quot;Email Address&quot; required=&quot;&quot; autofocus=&quot;&quot; /&gt;
+            &lt;input type=&quot;password&quot; class=&quot;form-control&quot; name=&quot;password&quot; placeholder=&quot;Password&quot; required=&quot;&quot; /&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;remember-me&quot; id=&quot;rememberMe&quot; name=&quot;rememberMe&quot;&gt; Remember me
+            &lt;/label&gt;
+            &lt;button class=&quot;btn btn-lg btn-primary btn-block&quot; type=&quot;submit&quot;&gt;Login&lt;/button&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+</pre>
+        CSS
+<pre>
+.wrapper {	
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+.form-signin {
+    max-width: 500px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: lightblue;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/bootstrap/4.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/bootstrap/4.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://getbootstrap.com">getbootstrap.com</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

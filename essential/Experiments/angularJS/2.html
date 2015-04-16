@@ -2,10 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AngularJS filters</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="2.js"></script>
 </head>
-<body>
+<body class="container">
     <h2>Angular JS Filters</h2><hr />
    
     <h3>AngularJS Currency Filer</h3>
@@ -16,16 +19,17 @@
 
         <p>Total = {{ (quantity * price) | currency }}</p>
     </div>
-    <div>
+
+    <div id="documentation">
         <hr />
-        <h4>About the experiment</h4>
+        <h4>About the Experiment</h4>
         <p>
-            This experiment is making use of filter in AngularJS<br />
-            A filter can be added to an expression with a pipe character (|) and a filter.
+            In this experiment, I made use of filter in AngularJS<br />
+            A filter can be added to an expression with a pipe character (|) and a filter.     
         </p>
         <hr />
         <h4>Code Snippet</h4>
-        Javascript :
+        Javascript
         <pre>
         &lt;script>
         function costController($scope) {
@@ -34,8 +38,7 @@
         }
         &lt;/script>
         </pre>
-        <hr />
-        HTML :
+        HTML
         <pre>
         &lt;div ng-app="" ng-controller="costController">
         Quantity: &lt;input type="number" ng-model="quantity">
@@ -44,15 +47,16 @@
         &lt;/div>
         </pre>
         <hr />
-    </div>
-
-    <div id="myfooter" class="ui-widget-content">
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/2.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/angularJS/2.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/2.js">jQuery Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_filters.asp">w3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/angular/angular_filters.asp">w3schools</a>
+            </p>
         </footer>
     </div>
 </body>

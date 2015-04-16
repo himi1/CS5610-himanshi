@@ -2,11 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>jQuery Effects</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="1.js"></script>
     <link href="css1.css" rel="stylesheet" />
 </head>
-<body>
+<body class="container">
     <p>Implementation of fading effect</p>
     <button>Click here to fade in</button><br><br>
     <div id="div1"
@@ -31,16 +40,56 @@
     <div id="flip">Click to slide the panel down or up</div>
     <div id="panel">Hello world!</div>
 
-    <div id="myfooter">
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I implemented various fading effects using JQuery.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        JQuery
+<pre>    
+$(function(){
+    $("button").click(function(){
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+    });
+    $("#button1").click(function () {
+        $("#div1").fadeOut();
+        $("#div2").fadeOut("slow");
+        $("#div3").fadeOut(3000);
+    });
+    $("#button2").click(function () {
+        $("#div1").fadeToggle();
+        $("#div2").fadeToggle("slow");
+        $("#div3").fadeToggle(3000);
+    });
+    $("#button3").click(function () {
+        $("#div4").animate({ left: '250px' });
+    });
+    $("#button4").click(function(){
+      $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+        });
+    $("#flip").click(function () {
+        $("#panel").slideToggle("slow");
+    });
+});
+</pre>
+        <hr />
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/jQuery/1.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/jQuery/1.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQuery/1.js">jQuery Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQuery/css1.css">CSS Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/jquery/default.asp">w3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/jquery/default.asp">w3schools</a>
+            </p>
         </footer>
-        </div>
-
+    </div>
 </body>
 </html>

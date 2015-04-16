@@ -2,12 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AngularJS Tables</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="4.js"></script>
     <link href="css1.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="container">
     <h2>Angular JS Tables</h2><hr />
 
     <h3>Reading of static data from another web page, applying CSS to it and using orderby filer</h3>
@@ -20,9 +24,9 @@
             </tr>
         </table>
     </div>
-    <div>
+    <div id="documentation">
         <hr />
-        <h4>About the experiment</h4>
+        <h4>About the Experiment</h4>
         <p>
             This experiment is performed to learn to implement tables using  AngularJS<br />
             AngularJS will invoke customersController with a $scope and $http object.
@@ -35,7 +39,7 @@
         </p>
         <hr />
         <h4>Code Snippet</h4>
-        Javascript :
+        Javascript
         <pre>
         &lt;script>
         function customersController($scope, $http) {
@@ -44,20 +48,18 @@
         }
         &lt;/script>
         </pre>
-        <hr />
-        HTML :
+        HTML
         <pre>
         &lt;div ng-app="" ng-controller="customersController">
         &lt;table>
         &lt;tr ng-repeat="x in names | orderBy : 'Country'">
-        &lt;td>{{ x.Name }}</td>
-        &lt;td>{{ x.Country }}</td>
+        &lt;td>{{ x.Name }}&lt;/td>
+        &lt;td>{{ x.Country }}&lt;/td>
         &lt;/tr>
         &lt;/table>
         &lt;/div>
        </pre>
-        <hr />
-        CCS :
+        CCS
         <pre>
         table, th, td {
             border: 1px solid grey;
@@ -72,18 +74,18 @@
         }
        </pre>
         <hr />
-    </div>
-
-    <div id="myfooter" class="ui-widget-content">
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/4.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/angularJS/4.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/4.js">jQuery Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/css1.css">CSS Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_tables.asp">jw3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/angular/angular_tables.asp">jw3schools</a>
+            </p>
         </footer>
     </div>
-
 </body>
 </html>

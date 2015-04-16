@@ -15,12 +15,10 @@
     <link rel="stylesheet" href="MovieLibrary.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
 </head>
-<body ng-app="myApp">
-
-    <div class="container">
-        <h2>
+<body class="container" ng-app="myApp">
+        <h1>
             AngularJS Routing-Introduction
-        </h2>
+        </h1>
         <hr />
         <nav>
             <ul class="nav nav-pills pull-right">
@@ -31,8 +29,50 @@
             </ul>
         </nav>
         <div ng-view>
-
         </div>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have implemented routing using Angular JS.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+JS
+<pre>
+var app = angular.module("myApp", ['ngRoute']);
+app.config(['$routeProvider',
+  function ($routeProvider) {
+      $routeProvider.
+        when('/home', {
+            templateUrl: 'ng-Route/home.html',
+        }).
+        when('/about', {
+            templateUrl: 'ng-Route/about.html',
+        })
+        .when('/contact', {
+            templateUrl: 'ng-Route/contact.html',
+        })
+        .when('/profile', {
+            templateUrl: 'ng-Route/profile.html',
+        }).
+        otherwise({
+            redirectTo: '/home'
+        });
+  }]);
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/misc2/routing.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc2/js/routing.js">JS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
     </div>
 </body>
 </html>

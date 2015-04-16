@@ -13,17 +13,17 @@
             <input type="button" class="btn btn-success" value="Click to start slide show" onclick="loop()"><br /><br />
         </div>
     </div>
-    <div>
-    <hr />
-    <h4>About the Experiment</h4>
-    <p>
-       In this experiment, on clicking the button, a slideshow of Images starts.<br />
-       Image on the frame changes after every two seconds. It goes on in a loop.
-    </p>
-    <hr />
-    <h4>Code Snippet</h4>
-    Javascript:
-    <pre>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, on clicking the button, a slideshow of Images starts.<br />
+            Image on the frame changes after every two seconds. It goes on in a loop.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript
+        <pre>
     var mySlideShow = document.getElementById('mySlideShow');
     var myPics = ['a.jpg', 'b.jpg', 'c.jpg', 'd.jpg', 'e.jpg', 'f.jpg', 'g.jpg', 'h.jpg', 'i.jpg', 'j.jpg', 'k.jpg', 'l.jpg'];
     var PicCount = myPics.length;
@@ -32,30 +32,33 @@
         if (i > (PicCount - 1)) {
             i = 0;
         }
-    mySlideShow.innerHTML = '<img src="../../images/' + myPics[i] + '">';
+    mySlideShow.innerHTML = '&lt;img src="../../images/' + myPics[i] + '">';
     i++;
     loopTimer = setTimeout('loop()', 1200);
     }
     </pre>
-    <hr />
-    HTML :
-    <pre>
+        HTML
+        <pre>
     &lt;div id="myFrame">
     &lt;div id="mySlideShow">
     &lt;input type="button" class="btn btn-success" value="Click to start slide show" onclick="loop()">&lt;br />&lt;br />
     &lt;/div>
     &lt;/div>    
     </pre>
-    <hr />
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/misc/2.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.js">js Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.css">css Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/">W3Schools</a>
+            </p>
+        </footer>
     </div>
-    <footer>
-        <p>
-            <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/misc/2.html">HTML Page</a>
-            , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.js">js Page</a>
-            , <a href="../../fileview/Default.aspx?~/Experiments/misc/2.css">css Page</a>
-        </p>
-    </footer>
-
 </body>
 </html>
 <script>

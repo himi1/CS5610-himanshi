@@ -2,11 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AngularJS Application</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script src="mynoteapp.js"></script>
     <script src="mynotecontrol.js"></script>
 </head>
-<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+<body class="container" ng-app="myNoteApp" ng-controller="myNoteCtrl">
     <h2>AngularJS MyNote Application</h2><hr />
     <h3>My Note</h3>
     <textarea ng-model="message" cols="50" rows="10"></textarea>
@@ -14,30 +18,22 @@
         <button ng-click="clear()">Clear</button>
     </p>
     <p>Number of characters left: <span ng-bind="left()"></span></p> 
-    <div id="myfooter" class="ui-widget-content">
-
-        <div>
-            <hr />
-            <h4>About the experiment</h4>
-            <p>
-                This experiment is performed to learn to implement tables using  AngularJS<br />
-                AngularJS will invoke customersController with a $scope and $http object.
-                $scope is the application object (the owner of application variables and functions).
-                $http is an XMLHttpRequest object for requesting external data.
-                $http.get() reads static JSON data from http://www.w3schools.com/website/Customers_JSON.php.
-                If success, the controller creates a property (names) in the scope, with JSON data from the server.
-                This data is then displayed after applying styling to it. I have used  | orderBy : 'Country' to order the names
-                by there Country names.
-            </p>
-            <hr />
-            <h4>Code Snippet</h4>
-            Javascript:<br />
-            mynoteapp.js :
-            <pre>
-             var app = angular.module("myNoteApp", []);        
-            </pre>
-            mynotecontrol.js :
-            <pre>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            An AngularJS Application is implemented in this experiment. It takes in the typed data, displays it on MyNote.
+            It also returns the Number of characters left, that may be typed in MyNote.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Javascript:<br />
+        mynoteapp.js
+        <pre>
+            var app = angular.module("myNoteApp", []);        
+        </pre>
+        mynotecontrol.js
+        <pre>
             app.controller("myNoteCtrl", function ($scope) {
             $scope.message = "";
             $scope.left = function () { return 500 - $scope.message.length; };
@@ -45,25 +41,27 @@
             $scope.save = function () { alert("Note Saved"); };
             });        
             </pre>
-            <hr />
-            HTML :
-            <pre>
+        <hr />
+        HTML
+        <pre>
             &lt;body ng-app="myNoteApp" ng-controller="myNoteCtrl">
             &lt;textarea ng-model="message" cols="50" rows="10">&lt;/textarea>
             &lt;p> &lt;button ng-click="save()">Save&lt;/button>
             &lt;button ng-click="clear()">Clear&lt;/button>
             &lt;/p>
             &lt;p>Number of characters left: &lt;span ng-bind="left()">&lt;/span>&lt;/p> 
-            </pre>
-            <hr />
-        </div>
-
+       </pre>
+        <hr />
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.html">HTML Page</a>
-                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/mynotecontrol.js">js Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/angularJS/3.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/angularJS/mynotecontrol.js">JS Page</a>
             </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/angular/angular_application.asp">w3schools</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/angular/angular_application.asp">w3schools</a>
+            </p>
         </footer>
     </div>
 </body>

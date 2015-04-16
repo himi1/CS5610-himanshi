@@ -18,10 +18,63 @@
     <input class ="btn btn-xs btn-warning" type="submit" value="GO" id="go">
     <output id="zipoutput">Zip Code:<span class="zip"></span></output>
 
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have used google api for auto completion of place name based on city name or zip code.
+            It also gives a zi code as output.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+<pre>
+$(function () {
+    var autocomplete;
+    var geocoder;
+    var input = document.getElementById('location');
+    var options = {
+        componentRestrictions: { 'country': 'us' },
+        types: ['(regions)'] 
+    };
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+    $('#go').click(function () {
+        var location = autocomplete.getPlace();
+        geocoder = new google.maps.Geocoder();
+        lat = location['geometry']['location']['k'];
+        lng = location['geometry']['location']['D'];
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder.geocode({ 'latLng': latlng }, function (results) {
+            for (i = 0; i < results.length; i++) {
+                for (var j = 0; j < results[i].address_components.length; j++) {
+                    for (var k = 0; k < results[i].address_components[j].types.length; k++) {
+                        if (results[i].address_components[j].types[k] == "postal_code") {
+                            zipcode = results[i].address_components[j].short_name;
+                            $('span.zip').html(zipcode);
+                        }
+                    }
+                }
+            }
+        });
+    });
+});
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p> 
+               <a href="../../fileview/Default.aspx?~/Experiments/misc2/placeautocomplete.html">HTML Page</a>
+               , <a href="../../fileview/Default.aspx?~/Experiments/misc2/js/placeautocomplete.js">JS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/js/default.asp" target="_blank">W3 Schools</a>
+                , <a href="https://docs.angularjs.org/tutorial/" target="_blank">AngularJS routing</a>
+            </p>
+        </footer>
+    </div>
+
    
 <h3>References</h3>
-    <a href="http://www.w3schools.com/js/default.asp" target="_blank">W3 Schools</a>
-    <br />
-    <a href="https://docs.angularjs.org/tutorial/" target="_blank">AngularJS routing</a>
+    
 </body>
 </html>

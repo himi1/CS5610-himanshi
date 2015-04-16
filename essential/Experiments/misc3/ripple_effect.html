@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ripple Effect - Checkbox and Radio Buttons</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="ripple effect.css" />
+
+</head>
+<body class="container">
+    <h1>Ripple Effect - Checkbox and Radio Buttons</h1>
+    <hr />
+    <div>
+        <label>
+            <input type="checkbox" class="option-input checkbox" checked />
+            Checkbox 1
+        </label>
+        <label>
+            <input type="checkbox" class="option-input checkbox" />
+            Checkbox 2
+        </label>
+        <label>
+            <input type="checkbox" class="option-input checkbox" />
+            Checkbox 3
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="radio" class="option-input radio" name="radio" />
+            Radio option 1
+        </label>
+        <label>
+            <input type="radio" class="option-input radio" name="radio" />
+            Radio option 2
+        </label>
+        <label>
+            <input type="radio" class="option-input radio" name="radio" />
+            Radio option 3
+        </label>
+    </div>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have tried to implement Ripple Effect with the help of CSS
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        CSS
+<pre>
+@-webkit-keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0.0;
+  }
+}
+@-moz-keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0.0;
+  }
+}
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0.0;
+  }
+}
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  margin-right: 0.5rem;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '\2716';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+body label {
+  display: block;
+  line-height: 40px;
+}
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p> 
+                <a href="../../fileview/Default.aspx?~/Experiments/misc3/ripple_effect.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc3/ripple effect.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>

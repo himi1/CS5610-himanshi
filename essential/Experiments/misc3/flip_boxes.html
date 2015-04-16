@@ -74,5 +74,71 @@
         </div>
     </div>
     <!--End of flip_boxes-->
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have tred to impleent flip boxes using CSS. I have used this code on my home page as well.
+            As the mouse hover over a specific div, it flips too display more information related to that specific div.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+<pre>
+.flipcard-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 150px;
+}
+.flipcard {
+    position: relative;
+    width: 220px;
+    height: 150px;
+    perspective: 500px;
+}
+    .flipcard.v:hover .front, .flipcard.v.flip .front {
+        transform: rotateX(180deg);
+    }
+    .flipcard.v:hover .back, .flipcard.v.flip .back {
+        transform: rotateX(0deg);
+    }
+    .flipcard.v .back {
+        transform: rotateX(-180deg);
+    }
+    .flipcard.h:hover .front, .flipcard.h.flip .front {
+        transform: rotateY(180deg);
+    }
+    .flipcard.h:hover .back, .flipcard.h.flip .back {
+        transform: rotateY(0deg);
+    }
+    .flipcard.h .back {
+        transform: rotateY(-180deg);
+    }
+    .flipcard .front, .flipcard .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        transition: all 0.5s ease-in;
+        color: white;
+       background-color: rgba(255,0,0,0.5); /* #dad8d4; /*#808080;*/
+        padding: 10px;
+        backface-visibility: hidden;
+    }
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/javascript/1.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/javascript/1.js">JS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
+    </div>
+
 </body>
 </html>

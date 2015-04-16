@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Documentation of parallax.html</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+</head>
+<body class="container">
+    <h1>Documentation of rain.html</h1>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this Experiment, I am trying to show an animation effect of rain.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        JS
+<pre>
+    var nbDrop = 1000;
+// function to generate a random number range.
+function randRange(minNum, maxNum) {
+    return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
+}
+// function to generate drops
+function Rain() {
+        for (i = 1; i < nbDrop; i++) {
+            var dropLeft = randRange(0, 1600);
+            var dropTop = randRange(-1000, 1400);
+            $('.rain').append('&lt;div class="drop" id="drop' + i + '">&lt;/div>');
+            $('#drop' + i).css('left', dropLeft);
+            $('#drop' + i).css('top', dropTop);
+    }
+}
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>js
+                <a href="../../fileview/Default.aspx?~/Experiments/misc3/rain.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc3/rain.js">JS Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/misc3/rain.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>

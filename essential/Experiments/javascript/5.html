@@ -30,5 +30,99 @@
             <img src="../../images/j.jpg">
         </div>
     </div>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have implemented Image Slider using JavaScript. I am taking 10 images, and displaying them after another
+            on a slider, which moves images in the div "sslide" throught JavaScript.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        HTML
+<pre>
+&lt;div data-js=&quot;sslide&quot;&gt;
+            &lt;img src=&quot;../../images/a.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/b.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/c.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/d.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/e.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/f.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/g.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/h.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/i.jpg&quot;&gt;
+            &lt;img src=&quot;../../images/j.jpg&quot;&gt;
+ &lt;/div&gt;
+</pre>
+        JS
+<pre>
+document.addEventListener('DOMContentLoaded', function () {
+    function sslider() {
+        var current = 0,
+            i,
+            slider = document.querySelector('[data-js="sslide"]'),
+            allImages = slider.querySelectorAll('img'),
+            imgWidth = Math.ceil(100 / allImages.length),
+            sliderWidth = allImages.length * 100;
+        slider.style.width = sliderWidth + '%';
+        for (i = 0; i <= allImages.length - 1; i++) {
+            allImages[i].style.width = imgWidth + '%';
+        }
+        function animateRight(cur) {
+            var i = imgWidth,
+                time = 50;
+            var animate = setInterval(function () {
+                if (i <= sliderWidth) {
+                    allImages[cur].style.marginLeft = "-" + i + "%";
+                    i--;
+                } else {
+                    clearInterval(animate);
+                }
+            }, time);
+        }
+        function reset() {
+            for (i = 0; i <= allImages.length - 1; i++) {
+                animateRight(i);
+            }
+            // resseting the current image to the first image
+            current = 0;
+        }
+        function animateLeft(cur) {
+            var i = 0,
+                time = 50;
+            var animate = setInterval(function () {
+                if (i <= imgWidth) {
+                    allImages[cur].style.marginLeft = "-" + i + "%";
+                    i++;
+                } else {
+                    clearInterval(animate);
+                }
+            }, time);
+        }
+        setInterval(function () {
+            if (current <= allImages.length - 2) {
+                animateLeft(current);
+                current++;
+            } else {
+                reset();
+            }
+        }, 3000);
+    } 
+    sslider();
+});
+</pre>
+                <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/javascript/5.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/javascript/5.js">JS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

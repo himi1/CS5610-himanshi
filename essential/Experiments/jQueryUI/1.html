@@ -5,11 +5,19 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="1.js"></script>
     <link href="css1.css" rel="stylesheet" />
 </head>
-<body>
+<body class="container">
     <h2>jQuery UI Implementations</h2><hr />
     <h3>Draggable</h3>
     <h5 class="draggable">DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME DRAG ME
@@ -72,14 +80,87 @@
             <br /><br />
     </div>
 
-    <div id="myfooter" class="ui-widget-content">
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have experimented on jQeueryUI. I implemented the following functionalities:
+            <ul>
+                <li>Draggable</li>
+                <li>Resizable</li>
+                <li>Selectable</li>
+                <li>Sortable</li>
+                <li>Accordion</li>
+            </ul>
+            I have also implemented auto-complete of Programming Languages(from a given list) using jQuery.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        JS
+<pre>
+$(function () {
+    $(".draggable").draggable();
+    $("#resizable").resizable();
+    $("#selectable").selectable();
+    $("#sortable").sortable();
+    $("#sortable").disableSelection();
+    $("#accordion").accordion();
+});
+$(function () {
+var availableTags = [
+"ActionScript",
+"AppleScript",
+"Asp",
+"BASIC",
+"C",
+"C++",
+"Clojure",
+"COBOL",
+"ColdFusion",
+"Erlang",
+"Fortran",
+"Groovy",
+"Haskell",
+"Java",
+"JavaScript",
+"Lisp",
+"Perl",
+"PHP",
+"Python",
+"Ruby",
+"Scala",
+"Scheme"
+    ];
+    $("#tags").autocomplete({
+        source: availableTags
+    });
+});
+</pre>
+        CSS
+<pre>
+  #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #resizable { width: 150px; height: 150px; padding: 0.5em; }
+  #feedback { font-size: 1.4em; }
+  #selectable .ui-selecting { background: #FECA40; }
+  #selectable .ui-selected { background: #F39814; color: white; }
+  #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+</pre>
+        <hr />
         <footer>
+            <p><strong>Source code:</strong></p>
             <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/jQueryUI/1.html">HTML Page</a>
+                <a href="../../fileview/Default.aspx?~/Experiments/jQueryUI/1.html">HTML Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQueryUI/1.js">jQuery Page</a>
                 , <a href="../../fileview/Default.aspx?~/Experiments/jQueryUI/css1.css">CSS Page</a>
             </p>
-            <p><strong>References:</strong><a href="jQueryui.com">jQueryUI</a></p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="jQueryui.com">jQueryUI</a>
+            </p>
         </footer>
     </div>
 </body>
