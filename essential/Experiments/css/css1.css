@@ -1,26 +1,33 @@
-﻿
-    nav {
+﻿    nav {
     float: left;
     background-color:#00ff21;
-    height:400px;
+    height:350px;
     width:150px;
     padding:10px;
 }
                 
  article {
-    width:1400px;
+    width:350px;
     float:left;
     padding:10px;
     text-indent:each-line;
+    text-align: justify;
 
 }
 
  footer {
-     width:1400px;
+     width:350px;
     color: blueviolet;
     clear:both;
     text-align:left;
     padding:1px;
 }
 
+#documentation {
+   clear:both;
+}
+
+.clearboth {
+    clear:both;
+}
 

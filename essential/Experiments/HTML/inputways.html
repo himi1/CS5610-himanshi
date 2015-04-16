@@ -1,6 +1,10 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
     <meta charset='utf-8' />
 
@@ -55,7 +59,7 @@
 
 </head>
 
-<body>
+<body class="container">
 
     <div class="pad">
 
@@ -127,16 +131,71 @@
             <input type="submit" name="submit" value="submit" onclick="alert('Thank you for filling the form.')" />
             
         </form>
-
-        <h5>Things implemented</h5>
-        <p> Hello. I implemented various input types on this page. Some entries are made "required". Datalist is used for 
+        <div id="documentation">
+            <hr />
+            <h4>About the Experiment</h4>
+            <p>In this experiment, I implemented various input types on this page. Some entries are made "required". Datalist is used for
             taking value of weekday(the last thing in the form). onclick event is also added on Submit button.
             Rest is self-understandable.</p>
-
-        <footer>
-            <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/inputways.html">View here</a></p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
-        </footer>
-    </div>
+            <hr />
+            <h4>Code Snippet</h4>
+            <pre>
+         &lt;form id=&quot;inputform&quot;&gt;
+            Enter name*:
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;&quot; required/&gt;&lt;br /&gt;
+            Enter password*:
+            &lt;input type=&quot;password&quot; name=&quot;password&quot; value=&quot;&quot; required /&gt;&lt;br /&gt;
+            Enter date of birth:
+            &lt;input type=&quot;date&quot; name=&quot;bdate&quot; value=&quot;&quot; required /&gt;&lt;br /&gt;
+            Enter email*:
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; value=&quot;&quot; required /&gt;&lt;br /&gt;
+            Married:
+            &lt;input type=&quot;checkbox&quot; name=&quot;married&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Gender:
+            Male&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot; checked&gt;
+            Female&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt;&lt;br /&gt;
+            Enter Contact number:
+            &lt;input type=&quot;tel&quot; name=&quot;tel&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter Favorite Color:
+            &lt;input type=&quot;color&quot; name=&quot;fcolor&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter Age(between 18 and 60):
+            &lt;input type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;18&quot; max=&quot;60&quot; value=&quot;18&quot;/&gt;&lt;br /&gt;
+            Enter Month of joining:
+            &lt;input type=&quot;month&quot; name=&quot;jmonth&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter Week of joining:
+            &lt;input type=&quot;week&quot; name=&quot;email&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter date and time of joining:
+            &lt;input type=&quot;datetime&quot; name=&quot;jdate&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter rating:
+            &lt;input type=&quot;range&quot; name=&quot;rating&quot; value=&quot;2&quot; max=&quot;5&quot; /&gt;&lt;br /&gt;&lt;br /&gt;
+            Enter a suitable time to talk to you:
+            &lt;input type=&quot;time&quot; name=&quot;email&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter your Blog Link(if any):
+            &lt;input type=&quot;url&quot; name=&quot;blog&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+            Enter weekday:
+            &lt;input list=&quot;weekdays&quot; name=&quot;selected_day&quot;&gt;
+            &lt;datalist id=&quot;weekdays&quot;&gt;
+                &lt;option value=&quot;Monday&quot;&gt;
+                &lt;option value=&quot;Tuesday&quot;&gt;
+                &lt;option value=&quot;Wednesday&quot;&gt;
+                &lt;option value=&quot;Thrusday&quot;&gt;
+                &lt;option value=&quot;Friday&quot;&gt;
+            &lt;/datalist&gt;
+            &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;submit&quot; onclick=&quot;alert('Thank you for filling the form.')&quot; /&gt;
+            
+        &lt;/form&gt;
+</pre>
+            <hr />
+            <footer>
+                <p><strong>Source code:</strong></p>
+                <p>
+                    <a href="../../fileview/Default.aspx?~/Experiments/HTML/inputways.html">HTML Page</a>
+                </p>
+                <p><strong>References:</strong></p>
+                <p>
+                    <a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a>
+                </p>
+            </footer>
+        </div>
 </body>
 </html>

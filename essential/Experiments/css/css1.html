@@ -4,20 +4,70 @@
 <head>
     <title>CSS Layout</title>
     <link href="css1.css" rel="stylesheet" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
 </head>
 
 <body>
-    <div><h1 id="page-title">CSS Page Layout</h1>
-    <hr/>
+    <div class="container">
+        <div>
+            <h1 id="page-title">CSS Page Layout</h1>
+            <hr />
+        </div>
+        <h2>
+            CSS with implementation of multiple columns
+        </h2>
+        <div id="documentation">
+            <hr />
+            <h4>About the Experiment</h4>
+            <p>
+                In this experiment, I implemented multiple columns using CSS.
+            </p>
+            <hr />
+            <h4>Code Snippet</h4>
+            CSS
+<pre>
+    nav {
+    float: left;
+    background-color:#00ff21;
+    height:400px;
+    width:150px;
+    padding:10px;
+}
+                
+ article {
+    width:350px;
+    float:left;
+    padding:10px;
+    text-indent:each-line;
+}
+ footer {
+     width:350px;
+    color: blueviolet;
+    clear:both;
+    text-align:left;
+    padding:1px;
+}
+</pre>
+            <hr />
+            <footer>
+                <p><strong>Source code:</strong></p>
+                <p>
+                    <a href="../../fileview/Default.aspx?~/Experiments/CSS/css1.html">HTML Page</a>
+                    ,<a href="../../fileview/Default.aspx?~/Experiments/CSS/css1.css">CSS Page</a>
+                </p>
+                <p><strong>References:</strong></p>
+                <p>
+                    <a href="http://www.w3schools.com/">w3schools</a>
+                </p>
+            </footer>
+        </div>
+        <hr />
+        <h1>OUTPUT</h1>
+        <hr />
     </div>
-    <h2>
-       CSS with implementation of multiple columns
-    </h2>
-   
-    <div>
-            <h1>Hello World</h1>
-    </div>
-
     <div id="nav">
         <nav>
             <div class="nav_link"><a href="#sec1">About</a> </div>
@@ -61,20 +111,9 @@
             </section>
 </article>
     </div>
-
-    <div id="myfooter">
-        <footer>
-            <p>This is footer</p>
-            <p>
-                <strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/CSS/css1.html">HTML Page</a>
-               ,<a href="../../fileview/Default.aspx?~/Experiments/CSS/css1.css">CSS Page</a>
-            </p>
-            <p><strong>References:</strong><a href="http://www.w3schools.com/">w3schools</a></p>
-
-        </footer>
-    </div>
-
+    <div class="clearboth"><br /></div>
     
+
 </body>
 
 </html>

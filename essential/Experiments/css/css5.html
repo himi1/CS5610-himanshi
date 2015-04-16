@@ -17,5 +17,63 @@
         <a href="#" class="blue" data-speed="4" data-color="#39f">Blue</a>
         <a href="#" class="yellow" data-speed="4" data-color="#ff3">Yellow</a>
     </nav>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I have experimented with Hover properties. I have changed the colors of the nav boxes
+            based on mouse hovers.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+<pre>
+    nav {
+  left: 0;
+  margin: -33px 0 0 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+nav a {
+  background: #2c2c2c;
+  border: 4px solid transparent;
+  box-shadow: 0 0 0 1px #3c3c3c, 0 0 0 2px #000;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 3px;
+  padding: 0 40px;
+  position: relative;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #111;
+  transition: all 400ms;
+}
+nav a.red { color: #f33; }
+nav a.green { color: #3f3; }
+nav a.blue { color: #39f; }
+nav a.yellow { color: #ff3; }
+nav a:hover {
+  background: teal;
+  color: #fff;
+}
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/css/css5.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/css/css5.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://codepen.io/">Code Pen</a>
+            </p>
+        </footer>
+    </div>
+
+
 </body>
 </html>

@@ -3,11 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Responsive Design</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
     <link href="css2.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
         <h1 id="page-title">Responsive Design</h1>
         <h2>
             This page responds to different screen sizes. It changes itself according to Computer screen, laptop screen and phone sreen.
@@ -70,13 +74,163 @@
             </div>
         </div>
 
-        <div id="myfooter">
-            <footer>
-                <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/CSS/css2.html">HTML Page</a>
-                , <a href="../../fileview/Default.aspx?~/Experiments/CSS/css2.css">CSS Page</a></p>
-                <p><strong>References:</strong><a href="http://www.w3schools.com/">w3schools</a></p>
-            </footer>
-        </div>
-        
+    <div id="documentation" class="container">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I implemented Responsive Design using CSS.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        CSS
+        <pre>
+h1 {
+    text-align: center;
+}
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#page-title {
+    text-decoration: underline;
+}
+.sec_title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+.nav_link {
+    margin:10px;
+}
+nav {
+    background-color:#93cac0;
+    padding:10px;
+}
+article {
+    padding:10px;
+    background-color:#d0cbcb;
+}
+header {
+    text-align:center;
+    background-color:black;
+    color:white;
+    padding:10px;
+}
+footer {
+    clear:both;
+    text-align:left;
+    padding:1px;
+}
+p {
+    clear:both;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    display: inline;
+    position: relative;
+    background-color:#93cac0;
+    width:30px;
+}
+ul ul {
+    position: absolute;
+    display: none;
+}
+li:hover ul{
+    display: block;
+}
+#phone_nav {
+    background-color:#93cac0;
+}
+#h_computer, #h_tablet, #h_phone {
+    display:none;
+}
+@media screen and (max-width: 700px) {
+    .container {
+        width: 300px;
+        margin: auto;
+    }
+    body nav {
+        display: none;
+    }
+    #h_phone {
+        display:block;
+    }
+    #implementation {
+        display:none;
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    .container {
+        width: 600px;
+        margin: auto;
+    }
+    .row {
+        width:600px;
+        clear:both;
+    }
+    .col-3 {
+        width:150px;
+        float:left;
+    }
+    .col-9 {
+        width:450px;
+        float:left;
+    }
+    nav {
+        height:1337px;
+    }
+    #phone_nav {
+        display:none;
+    }
+    #h_tablet {
+        display:block;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .container {
+        width: 840px;
+        margin: auto;
+    }
+    .row {
+        width:840px;
+        clear:both;
+    }
+    .col-3 {
+        width:210px;
+        float:left;
+    }
+    .col-9 {
+        width:630px;
+        float:left;
+    }
+    nav {
+        height:1013px;
+    }
+    #phone_nav {
+        display:none;
+    }
+    #h_computer {
+        display:block;
+    }
+}
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/CSS/css2.html">HTML Page</a>
+                , <a href="../../fileview/Default.aspx?~/Experiments/CSS/css2.css">CSS Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/">w3schools</a>
+            </p>
+        </footer>
+    </div>    
 </body>
 </html>

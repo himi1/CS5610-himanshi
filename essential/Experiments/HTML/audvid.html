@@ -2,6 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <meta charset='utf-8' />
 
     <title>Audio video Experiment</title>
@@ -55,7 +58,7 @@
 
 </head>
 
-<body>
+<body class="container">
 
     <div class="pad">
 
@@ -90,7 +93,7 @@
                     Your browser does not support the audio element.
                 </audio>
                 <hr />
-                <h3>Playing audio on webpage</h3>
+                <h3>Playing Video on webpage</h3>
                 <video width="400" height="300" controls>
                     <source src="../source/vid.mp4" type="video/mp4">
                     Your browser does not support the video tag.
@@ -107,9 +110,48 @@
         </form>
 
     </div>
-    <footer>
-        <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/audvid.html">View here</a></p>
-        <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
-    </footer>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I implemented various ways to play audio and video using HTML.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+ <pre>
+     Playing audio on webpage
+                &lt;audio controls&gt;
+                    &lt;source src=&quot;../source/aud001.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+                    Your browser does not support the audio element.
+                &lt;/audio&gt;
+     Autoplay enabled
+                &lt;audio controls autoplay&gt;
+                    &lt;source src=&quot;../source/aud002.mp3&quot; type=&quot;audio/mp3&quot;&gt;
+                    Your browser does not support the audio element.
+                &lt;/audio&gt;
+                &lt;hr /&gt;
+    Playing Video on webpage
+                &lt;video width=&quot;400&quot; height=&quot;300&quot; controls&gt;
+                    &lt;source src=&quot;../source/vid.mp4&quot; type=&quot;video/mp4&quot;&gt;
+                    Your browser does not support the video tag.
+                &lt;/video&gt;
+    Autoplay enabled
+                &lt;video width=&quot;400&quot; height=&quot;300&quot; autoplay controls&gt;
+                    &lt;h3&gt;bhbjhb&lt;/h3&gt;autonnk&lt;source src=&quot;../source/vid.mp4&quot; type=&quot;video/mp4&quot;&gt;
+                    Your browser does not support the video tag.
+    &lt;/video&gt;
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/HTML/audvid.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>

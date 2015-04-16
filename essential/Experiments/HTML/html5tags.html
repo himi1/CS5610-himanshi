@@ -5,6 +5,11 @@
     <meta charset='utf-8' />
 
     <title>html5 tags Experiment</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+
 
     <style type="text/css">
         ul.master_navigation {
@@ -55,7 +60,7 @@
 
 </head>
 
-<body>
+<body class="container">
 
     <div class="pad">
 
@@ -125,9 +130,66 @@
             </form>
 
     </div>
-    <footer>
-        <p><strong>Source code:</strong><a href="../../fileview/Default.aspx?~/Experiments/HTML/html5tags.html">View here</a></p>
-        <p><strong>References:</strong><a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a></p>
-    </footer>
+    <div id="documentation">
+        <hr />
+        <h4>About the Experiment</h4>
+        <p>
+            In this experiment, I implemented various input types on this page. Some entries are made "required". Datalist is used for
+            taking value of weekday(the last thing in the form). onclick event is also added on Submit button.
+            Rest is self-understandable.
+        </p>
+        <hr />
+        <h4>Code Snippet</h4>
+        Formatting html5 tags
+        <pre>
+            &lt;p&gt;&amp;lt;mark&gt; is used to &lt;mark&gt;Mark something important&lt;/mark&gt;.&lt;/p&gt;
+            &lt;p&gt;&amp;lt;meter&gt; tag is used to measure data within a given range&lt;/p&gt;
+            &lt;meter value=&quot;0.5&quot;&gt;&lt;/meter&gt; &lt;meter value=&quot;0.8&quot;&gt;&lt;/meter&gt;
+            &lt;p&gt;&amp;lt;progress&gt; tag is used to indicate current progress. For example:&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Form progress: &lt;/strong&gt;&lt;progress value=&quot;7&quot; max=&quot;10&quot;&gt;&lt;/progress&gt;&lt;/p&gt;
+            &lt;p&gt;&amp;lt;&lt;/p&gt;
+        </pre>           
+Inputing of data using various ways
+<pre>
+            &lt;input type=&quot;password&quot; name=&quot;inputpassword&quot; value=&quot;&quot;/&gt;
+            &lt;p&gt;&amp;lt;&lt;/p&gt;
+            &lt;p&gt;&amp;lt;&lt;/p&gt;
+             
+            &lt;p&gt;use of &amp;lt;datalist&gt; tag to input weekdays&lt;/p&gt;
+            &lt;div&gt;
+                &lt;input list=&quot;weekdays&quot; name=&quot;selected_day&quot;&gt;
+                &lt;datalist id=&quot;weekdays&quot;&gt;
+                    &lt;option value=&quot;Monday&quot;&gt;
+                    &lt;option value=&quot;Tuesday&quot;&gt;
+                    &lt;option value=&quot;Wednesday&quot;&gt;
+                    &lt;option value=&quot;Thrusday&quot;&gt;
+                    &lt;option value=&quot;Friday&quot;&gt;
+                &lt;/datalist&gt;
+                &lt;input type=&quot;submit&quot;&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input list=&quot;weekdays&quot; name=&quot;selected_day&quot;&gt;
+                &lt;datalist id=&quot;weekdays&quot;&gt;
+                    &lt;option value=&quot;Monday&quot;&gt;
+                    &lt;option value=&quot;Tuesday&quot;&gt;
+                    &lt;option value=&quot;Wednesday&quot;&gt;
+                    &lt;option value=&quot;Thrusday&quot;&gt;
+                    &lt;option value=&quot;Friday&quot;&gt;
+                &lt;/datalist&gt;
+                &lt;input type=&quot;checkbox&quot;&gt;
+            &lt;/div&gt;
+</pre>
+        <hr />
+        <footer>
+            <p><strong>Source code:</strong></p>
+            <p>
+                <a href="../../fileview/Default.aspx?~/Experiments/HTML/html5tags.html">HTML Page</a>
+            </p>
+            <p><strong>References:</strong></p>
+            <p>
+                <a href="http://www.w3schools.com/tags/ref_byfunc.asp">w3schools</a>
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
