@@ -1,0 +1,131 @@
+<section class="row" data-ng-controller="PaymentController">
+	<section class="sub-header">
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!/"><i class="fa fa-home"></i></a></li>
+					<li class="active">Place your Order</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+
+	<!--Page Content-->
+	<div id="page-content">
+		<section class="container">
+			<h1>Your Order Details:</h1>
+			<table class="specTable" cellspacing="0">
+				<tr>
+					<th class="groupHead">Item Detail</th>
+					<th class="groupHead">Quantity</th>
+					<th class="groupHead">Cost</th>
+				</tr>
+				<tr>
+					<td class="specsKey">
+						<h1>{{mobileDetails.name}}</h1>
+						<div class="opactiy-60">{{mobileDetails.brand}}</div>
+					</td>
+					<td class="specsValue">{{price}} X <input type="number" class="inline-input" ng-model="quantity"/></td>
+					<td class="specsValue">{{price}}</td>
+				</tr>
+				<tr>
+					<td class="specsKey"></td>
+					<td class="specsValue text-right">Amount Payable</td>
+					<td class="specsValue"><h1><i class="fa fa-rupee"></i> {{price * quantity}}</h1></td>
+				</tr>
+				<tr>
+					<td class="specsKey"></td>
+					<td class="specsValue text-right">Bit Coin Payable</td>
+					<td class="specsValue">
+						<h1>{{price * quantity / rate}} BTC</h1>
+						<div class="fs">* 1 BTC = <i class="fa fa-rupee"></i> {{rate}}</div>
+					</td>
+				</tr>
+			</table>
+			<div class="row">
+				<div class="col-md-12">
+					<form id="form-profile" enctype="multipart/form-data" name="userForm" data-ng-submit="placeOrder()" class="signin" autocomplete="off">
+						<div class="row">
+							<!--Contact Info-->
+							<div class="col-md-9 col-sm-9">
+								<section ng-show="!isDifferent">
+									<div class="opacity-60">Your Shipping Details:</div>
+									<div>{{user.displayName}}</div>
+									<div>{{user.address.street}}</div>
+									<div>{{user.address.city}} {{user.address.state}} - {{user.address.zip}}</div>
+									<div>Phone: {{user.mobile}}</div>
+								</section>
+								<section>
+									<label><input type="checkbox" ng-model="isDifferent"/> Enter different shipping details.</label>
+								</section>
+								<section ng-show="isDifferent">
+									<h3><i class="fa fa-user"></i> Personal Info</h3>
+									<div class="row">
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="first-name">Full Name</label>
+												<input type="text" class="form-control" id="first-name" name="fullName" ng-model="order.displayName" placeholder="First Name">
+											</div>
+											<!--/.form-group-->
+										</div>
+
+										<!--/.col-md-3-->
+										<div class="col-md-6 col-sm-12">
+											<div class="form-group">
+												<label for="mobile">Mobile</label>
+												<input type="text" class="form-control" id="mobile" name="mobile" pattern="\d*" ng-model="order.mobile" placeholder="ISD code + Mobile Number">
+											</div>
+											<!--/.form-group-->
+										</div>
+										<!--/.col-md-3-->
+									</div>
+								</section>
+								<section ng-show="isDifferent">
+									<h3><i class="fa fa-map-marker"></i> Address</h3>
+									<div class="form-group">
+										<label for="street">Street</label>
+										<input type="text" class="form-control" id="street" name="street" ng-model="order.address.street" placeholder="Your Street Address">
+									</div>
+									<div class="row">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<label for="city">City</label>
+												<input type="text" class="form-control" id="city" ng-model="order.address.city" name="city" placeholder="Your City">
+											</div>
+										</div>
+										<!--/.col-md-8-->
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<label for="state">State</label>
+												<input type="text" class="form-control" id="state" ng-model="order.address.state" name="state" placeholder="Your State">
+											</div>
+										</div>
+									</div>
+
+									<!--/.form-group-->
+									<div class="row">
+										<div class="col-md-4 col-sm-4">
+											<div class="form-group">
+												<label for="zip">ZIP</label>
+												<input type="text" class="form-control" id="zip" ng-model="order.address.zip" name="zip" pattern="\d*" placeholder="Your Zip Code">
+											</div>
+										</div>
+									</div>
+									<!--/.form-group-->
+								</section>
+
+								<!-- /.form-group -->
+							</div>
+							<div class="col-md-3">
+								<div class="form-group text-right">
+									<button type="submit" class="btn btn-large btn-default" id="submit">Place Your Order</button>
+								</div>
+							</div>
+							<!--/.col-md-6-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
+</section>

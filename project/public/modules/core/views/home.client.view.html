@@ -1,0 +1,70 @@
+<div data-ng-controller="HomeController">
+	<!--Page Content-->
+	<div id="page-content">
+		<!--Hero Image-->
+		<section class="hero-image search-filter-middle height-500">
+			<div class="inner">
+				<div class="container">
+					<h1 class="head">Mobile Exclusive Bit Coin E-Commerce Platform</h1>
+					<h3 class="head">Buy A Phone and Get Cashback</h3>
+					<div class="search-bar horizontal">
+						<form class="main-search border-less-inputs background-dark narrow" role="form" method="post" action="?">
+							<div class="input-row">
+								<!-- /.form-group -->
+								<div class="form-group">
+									<label for="model">Select Brand</label>
+									<select name="model" id="model" title="Any" data-live-search="true" data-ng-model="selectedBrand">
+										<option value="{{brand}}" ng-repeat="brand in brands">{{brand}}</option>
+									</select>
+								</div>
+								<!-- /.form-group -->
+								<div class="form-group">
+									<label for="location">Search</label>
+									<div class="input-group location">
+										<input type="text" class="form-control" id="location" ng-model="searchText" placeholder="Enter Model Here..." ng-keydown="searchResults($event)" autocomplete="off">
+									</div>
+									<div class="list-slider" ng-show="searchText">
+										<ul class="slide drop-down">
+											<li class="list-item" ng-show="loadingList">
+												<div class="website-loader">
+													<div class="three-quarters-loader"></div>
+												</div>
+											</li>
+											<li class="list-item" ng-model="textSearchResult" ng-repeat="result in textSearchResult" ng-class="{ 'selected': $index + 1 === selectedIndex }">
+												<a href="#!/detail/{{result._id}}">
+													<div class="search-item">
+														<img class="left thumbnail-img" ng-src="http://gronicalappstudios.com/phonegallary/{{result.brand}}/{{result._id}}/{{result._id}}-thumb.jpg" alt=""/>
+														<div class="mob-detail">
+															<h4>{{result.name}}</h4>
+															<figure>{{result.brand}}</figure>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li class="list-item" ng-show="textSearchResult.length === 0 && loadingList === false">
+												<div class="search-item">
+													<div class="mob-detail">
+														<h4 class="center">No Result Found</h4>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /.form-group -->
+								<div class="form-group">
+									<a href="#!/list/{{selectedBrand}}/{{searchText}}/1" class="search-button btn btn-default"><i class="fa fa-search"></i></a>
+								</div>
+								<!-- /.form-group -->
+							</div>
+						</form>
+						<!-- /.main-search -->
+					</div>
+					<!-- /.search-bar -->
+				</div>
+			</div>
+		</section>
+		<!--end Hero Image-->
+	</div>
+	<!-- end Page Content-->
+</div>

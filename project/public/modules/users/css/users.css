@@ -1,0 +1,133 @@
+@media (min-width: 992px) {
+  .nav-users {
+    position: fixed;
+  }
+}
+.remove-account-container {
+  display: inline-block;
+  position: relative;
+}
+.btn-remove-account {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.profile-content {
+  padding-top: 30px;
+}
+.profile-content .profile-picture {
+  background-color: #344556;
+  border-radius: 50%;
+  height: 160px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 160px;
+}
+.profile-content .profile-picture .profile-picture-round {
+  height: 100%;
+}
+.profile-content .suggestion-box {
+  position: relative;
+}
+.profile-content .visitor-profile-picture {
+  background-color: #344556;
+  border-radius: 50%;
+  float: left;
+  height: 40px;
+  margin-bottom: 8px;
+  margin-right: 5px;
+  overflow: hidden;
+  text-align: center;
+  width: 40px;
+}
+.profile-content .visitor-profile-picture .visitor-profile-picture-round {
+  height: 100%;
+}
+.profile-content .profile-name {
+  color: #2d2d2d;
+  font-size: 22px;
+  font-weight: 700;
+}
+.profile-content .visitor-profile-follower {
+  color: #8d8d8d;
+  font-size: 12px;
+  font-weight: normal;
+}
+.profile-content .visitor-profile-name {
+  float: left;
+  color: #2d2d2d;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+.profile-content .profile-follow-button {
+  border-radius: 7px;
+  margin-top: 21px;
+}
+.profile-content .review-icon {
+  color: #ffffff;
+  background-color: #8d8d8d;
+  border-radius: 50%;
+  font-size: 15px;
+  padding: 8px 10px;
+}
+.profile-content .review-box {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 1px solid #8d8d8d;
+}
+.profile-content .sub-title {
+  color: #8d8d8d;
+  font-size: 12px;
+}
+.profile-content .visitor-follower-icon {
+  border-radius: 28%;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  float: left;
+  font-size: 18px;
+  padding: 1px 4px;
+  position: absolute;
+  right: 13px;
+  top: 2px;
+}
+.block-display {
+  display: block !important;
+}
+.color-default {
+  color: #ff9c00 !important;
+}
+.text-bold {
+  font-weight: bold;
+}
+.center {
+  text-align: center !important;
+}
+.right {
+  text-align: right !important;
+}
+.text-bold {
+  font-weight: bold;
+}
+.border-bottom {
+  border-bottom: 1px solid rgba(234, 234, 234, 0.25);
+}
+.bg-green {
+  background-color: #77ad10 !important;
+}
+.block-display {
+  display: block;
+}
+.legend {
+  background-color: #ff9c00 !important;
+  border-radius: 18%;
+  color: white;
+  font-size: 0.85em;
+  padding: 2px 5px;
+}
+.space-right {
+  margin-right: 10px;
+}

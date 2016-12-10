@@ -1,0 +1,199 @@
+<div id="mobile-detail" class="page-item-detail" ng-controller="MobileListController">
+	<section class="sub-header">
+		<div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+		<!-- /.search-bar -->
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!/"><i class="fa fa-home"></i></a></li>
+					<li>List</li>
+					<li class="active">{{mobileDetails.brand}}</li>
+				</ol>
+				<!-- /.breadcrumb-->
+			</div>
+			<!-- /.container-->
+		</div>
+		<!-- /.breadcrumb-wrapper-->
+	</section>
+	<div id="page-content">
+		<section class="container" id="{{mobileDetails._id}}">
+			<div class="row">
+				<!--Item Detail Content-->
+				<div class="col-md-12">
+					<section class="block" id="main-content">
+						<header class="page-title">
+							<div class="title">
+								<h1>{{mobileDetails.name}}</h1>
+								<figure>{{mobileDetails.brand}}</figure>
+							</div>
+							<div class="info">
+								<div class="type">
+									<img ng-src="/brand_logo/{{mobileDetails.brand | lowercase}}.png" alt=""/>
+								</div>
+							</div>
+						</header>
+						<div class="row">
+							<!--Detail Sidebar-->
+							<aside class="col-md-4 col-sm-4" id="detail-sidebar">
+								<!--Contact-->
+								<section class="image">
+									<div class="owl-carousel gallery" ng-if="mobileDetails.images >= 0">
+										<img ng-src="http://gronicalappstudios.com/phonegallary/{{mobileDetails.brand}}/{{mobileDetails._id}}/{{mobileDetails._id}}-{{$index}}.jpg" ng-repeat="i in getImages(mobileDetails.images) track by $index"/>
+									</div>
+									<div ng-if="!mobileDetails.images && success"><h2>No images Available</h2> <h4>No issues, we will add it soon :)</h4></div>
+									<div ng-if="!success">
+										<div class="website-loader">
+											<div class="three-quarters-loader"></div>
+										</div>
+									</div>
+								</section>
+								<!--end Contact-->
+								<!--Rating-->
+								<section class="clearfix">
+									<header class="pull-left"><a href="#reviews" class="roll"><h3>Ratings</h3></a></header>
+									<figure class="star-rating big pull-right" data-star="{{rating}}"></figure>
+								</section>
+								<section class="clearfix">
+									<span class="btn framed icon" ng-click="addToFavourite($event,mobileDetails._id,mobileDetails.name)">Shortlist this<i class="fa fa-star-o"></i></span>
+									<a href="#write-review" class="btn framed icon pull-right roll" ng-if="authentication.user">Write a review<i class="fa fa-pencil"></i></a>
+									<span class="btn framed icon pull-right" ng-if="!authentication.user" ng-click="writeReview()">Write a review<i class="fa fa-pencil"></i></span>
+								</section>
+
+								<section class="clearfix profile-content">
+									<header><h3>Shortlisted by {{favouritesUsers.length}} User(s) </h3></header>
+								</section>
+								<!--end Rating-->
+							</aside>
+							<!--end Detail Sidebar-->
+							<!--Content-->
+							<div class="col-md-8 col-sm-8">
+								<section>
+									<!-- /.block -->
+									<article ng-if="products.length > 0">
+										<h2 class="detail-features">Buy to get cashback</h2>
+										<div class="product" ng-repeat="product in products">
+											<a href="{{product.url}}&affExtParam1={{uniqueId}}" target="_blank" ng-click="buyNow(product)">
+												<div class="product-image">
+													<img src="{{product.image}}" alt="">
+												</div>
+												<div class="product-detail">
+													<div class="fs opacity-60">{{product.category}}</div>
+													<div class="text-bold">{{product.title}} ({{product.color}})</div>
+													<div class="fs">{{product.brand}}</div>
+													<div class="text-bold price"><span class="custom-label"><i class="fa fa-rupee"></i> {{product.price}}</span> <span class="cut opacity-60 fs" ng-if="product.mprice !== product.price"><i class="fa fa-rupee"></i> {{product.mprice}}</span></div>
+													<div class="fs opacity-60">Cashback Amount : {{1 * product.price / 100}} (Get {{2 * product.price / 100}} on buying on Flipkart App)</div>
+												</div>
+												<div class="logo"><img src="/brand_logo/{{product.merchant}}.png" alt="{{product.merchant}}"></div>
+											</a>
+										</div>
+										<h5 class="fs opacity-70" ng-if="!authentication.user">* You must be login to get the cashback</h5>
+									</article>
+									<article ng-if="products.length == 0">
+										<div class="website-loader">
+											<div class="three-quarters-loader"></div>
+										</div>
+									</article>
+									<article class="block phone-feature-block">
+										<h2 class="detail-features">Features</h2>
+										<ul class="bullets">
+											<li ng-show="mobileDetails.camera">{{mobileDetails.camera}}</li>
+											<li ng-show="mobileDetails.os">{{mobileDetails.os}}</li>
+											<li ng-show="mobileDetails.screen">{{mobileDetails.screen}}</li>
+											<li ng-show="mobileDetails.resolution">{{mobileDetails.resolution}}</li>
+											<li ng-show="mobileDetails.cpu">{{mobileDetails.cpu}}</li>
+											<li ng-show="mobileDetails.internal">{{mobileDetails.internal}}</li>
+											<li ng-show="mobileDetails.ram">{{mobileDetails.ram}}</li>
+										</ul>
+									</article>
+									<!-- /.block -->
+									<h2 class="detail-features">Detail Specification</h2>
+									<article class="block phone-feature-block">
+										<table class="specTable" cellspacing="0" ng-repeat="feature in mobileDetails.features">
+											<tr>
+												<th class="groupHead" colspan="2">{{feature.name}}</th>
+											</tr>
+											<tr ng-repeat="item in feature.values">
+												<td class="specsKey">{{item.key}}</td>
+												<td class="specsValue">{{item.value}}</td>
+											</tr>
+										</table>
+									</article>
+									<!-- /.block -->
+								</section>
+								<!--Reviews-->
+								<section class="block" id="reviews">
+									<header class="clearfix">
+										<h2 class="pull-left">Reviews</h2>
+										<a href="#write-review" class="btn framed icon pull-right roll" ng-if="authentication.user">Write a review <i class="fa fa-pencil"></i></a>
+										<span class="btn framed icon pull-right" ng-if="!authentication.user" ng-click="writeReview()">Write a review <i class="fa fa-pencil"></i></span>
+									</header>
+									<article class="clearfix overall-rating">
+										<strong class="pull-left">Over Rating</strong>
+										<figure class="star-rating big color pull-right" data-star="{{rating}}"></figure>
+										<!-- /.rating -->
+									</article><!-- /.overall-rating-->
+									<section class="reviews" ng-repeat="reviewItem in reviewList">
+										<article class="review">
+											<figure class="author">
+												<img ng-src="{{reviewItem.user_id.profilePicture || '/assets/img/default-avatar.png'}}" alt="">
+												<div class="date">{{reviewItem.createdTime | date:'yyyy-MM-dd'}}</div>
+											</figure>
+											<!-- /.author-->
+											<div class="wrapper">
+												<h5><a href="/#!/user/profile/{{reviewItem.user_id._id}}">{{reviewItem.name}}</a></h5>
+												<figure class="star-rating big color" data-star="{{reviewItem.rating}}"></figure>
+												<p>{{reviewItem.review_text}}</p>
+												<!-- /.user-rating -->
+											</div>
+											<!-- /.wrapper-->
+										</article>
+										<!-- /.review -->
+									</section>
+									<!-- /.reviews-->
+								</section>
+								<!-- /#reviews -->
+								<!--end Reviews-->
+								<!--Review Form-->
+								<section id="write-review" ng-if="authentication.user">
+									<header>
+										<h2>Write a Review</h2>
+									</header>
+									<div class="review-form background-color-white">
+										<div class="row">
+											<div class="center col-md-12" ng-hide="!successReview"><span>Review Posted successfully</span></div>
+											<div class="col-md-12" ng-hide="successReview">
+												<aside class="user-rating">
+													<label>Your Rating:</label>
+													<figure class="star-rating active" data-name="value"></figure>
+												</aside>
+											</div>
+											<div class="col-md-12" ng-hide="successReview">
+												<!-- /.form-group -->
+												<div class="form-group">
+													<label for="form-review-message">Your Message:</label>
+													<textarea class="form-control" id="form-review-message" name="form-review-message" rows="3" required="" ng-model="reviewText"></textarea>
+												</div>
+												<!-- /.form-group -->
+												<div class="form-group">
+													<button class="btn btn-default" ng-click="submitReview(reviewText)">Submit Review</button>
+												</div>
+												<!-- /.form-group -->
+											</div>
+										</div>
+									</div>
+									<!-- /.main-search -->
+								</section>
+								<!--end Review Form-->
+							</div>
+							<!-- /.col-md-8-->
+						</div>
+						<!-- /.row -->
+					</section>
+					<!-- /#main-content-->
+				</div>
+
+			</div><!-- /.row-->
+		</section>
+		<!-- /.container-->
+	</div>
+</div>

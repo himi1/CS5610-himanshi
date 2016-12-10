@@ -1,0 +1,47 @@
+.review-form {
+	padding: 20px;
+}
+
+header.your-rating {
+	margin-top: 14px;
+}
+
+.add-to-favourite.submit-item {
+	display: inline-block;
+	margin-left: 0;
+	position: absolute;
+	right: -4px;
+	top: 2px;
+	transition: all 0.4s ease 0s;
+	&:hover .content {
+		opacity: 1;
+		right: 40px;
+		visibility: visible;
+	}
+	.content {
+		background-color: #ff9c00;
+		color: #fff;
+		display: inline-block;
+		font-weight: bold;
+		opacity: 0;
+		padding: 5px 10px;
+		position: absolute;
+		right: 30px;
+		top: -2px;
+		transition: all 0.4s cubic-bezier(0.42, 0, 0.06, 0.99) 0s;
+		vertical-align: middle;
+		visibility: hidden;
+		white-space: nowrap;
+	}
+	.icon {
+		background-color: #ff9c00;
+		display: inline-block;
+		height: 26px;
+		margin-left: 5px;
+		text-align: center;
+		width: 26px;
+		color: #fff;
+		font-size: 16px;
+		line-height: 27px;
+	}
+}

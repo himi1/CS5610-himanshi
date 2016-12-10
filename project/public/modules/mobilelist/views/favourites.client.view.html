@@ -1,0 +1,79 @@
+<div id="mobile-list" ng-controller="FavourireController">
+
+	<!--Sub Header-->
+	<section class="sub-header">
+		<div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+		<!-- /.search-bar -->
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!/"><i class="fa fa-home"></i></a></li>
+					<li class="active">Shortlisted</li>
+				</ol>
+				<!-- /.breadcrumb-->
+			</div>
+			<!-- /.container-->
+		</div>
+		<!-- /.breadcrumb-wrapper-->
+	</section>
+	<!--end Sub Header-->
+
+	<!--Page Content-->
+	<div id="page-content">
+		<section class="container">
+			<header>
+				<h1 class="page-title" ng-if="totalResults > 0">{{totalResults}} Phones in your Shortlisted</h1>
+				<h1 class="page-title" ng-if="totalResults == 0">No Phones found in your Shortlisted list</h1>
+				<h1 class="page-title" ng-if="totalResults == -1">Please Wait... Fetching List of Phones...</h1>
+			</header>
+
+				<!--Listing Grid-->
+				<section class="block equal-height">
+				<div class="row">
+					<div class="col-md-3 col-sm-4" ng-repeat="mobile in mobileList">
+						<div class="item">
+							<div class="image">
+								<!--<div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>-->
+								<a href="#!/detail/{{mobile.mobile_id._id}}">
+									<div class="overlay">
+										<div class="inner">
+											<div class="content">
+												<h4>Specification</h4>
+												<p>CPU : {{mobile.mobile_id.fullCpu}}</p>
+												<p>RAM : {{mobile.mobile_id.ram}}</p>
+												<p>Internal Memory : {{mobile.mobile_id.internal}}</p>
+												<p>Primary Camera : {{mobile.mobile_id.camera}}</p>
+											</div>
+										</div>
+									</div>
+									<div class="item-specific">
+										<span title="Processor"><i class="fa fa-bar-chart"></i> {{mobile.mobile_id.cpu}}</span>
+										<span title="Camera"><i class="fa fa-camera"></i> {{mobile.mobile_id.camera}}</span>
+										<span title="RAM"><i class="fa fa-database"></i> {{mobile.mobile_id.ram}}</span>
+									</div>
+									<!--<div class="icon" ng-if="$index % 3 == 0">
+										<i class="fa fa-thumbs-up"></i>
+									</div>-->
+									<div class="add-to-favourite submit-item" ng-click="removeFavourite($event,$index,mobile._id,mobile.mobile_id.name)">
+										<div class="content"><span>Remove From favourite</span></div>
+										<div class="icon">
+											<i class="fa fa-trash-o"></i>
+										</div>
+									</div>
+									<div class="phone-image" style="background-image: url('http://gronicalappstudios.com/phonegallary/{{mobile.mobile_id.brand}}/{{mobile.mobile_id._id}}/{{mobile.mobile_id._id}}-main.jpg')"></div>
+								</a>
+							</div>
+							<div class="wrapper">
+								<a href="#!/detail/{{mobile.mobile_id._id}}"><h3>{{mobile.mobile_id.name}}</h3></a>
+								<figure>{{mobile.mobile_id.brand}}</figure>
+								<div class="info">
+									<div class="star-rating" data-star="{{mobile.mobile_id.avgRating || 0}}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+<section class="row" data-ng-controller="UserController">
+	<section class="sub-header">
+		<div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!"><i class="fa fa-home"></i></a></li>
+					<li class="active">User Profile</li>
+				</ol>
+			</div>
+		</div>
+	</section>
+
+	<div id="page-content">
+		<section class="container">
+			<div class="row profile-content space-under">
+				<div class="col-md-3">
+					<div class="profile-picture">
+						<img class="profile-picture-round" ng-src="{{user.profilePicture || '/assets/img/default-avatar.png'}}" alt="profile-picture"/>
+					</div>
+					<div class="profile-name">{{user.displayName}}</div>
+					<div ng-if="user.about" class="opacity-60">{{user.about}}</div>
+					<div ng-if="user.address.city">
+						<i class="fa fa-map-marker"></i> <span>{{user.address.city}}</span>
+					</div>
+					<div class="btn btn-default block-display profile-follow-button" ng-if="authenticatedUser._id != user._id" ng-click="followUser(user._id,user.displayName)"><span ng-if="isFollowing">Unfollow</span><span ng-if="!isFollowing">Follow</span></div>
+					<a class="btn btn-default block-display profile-follow-button mbs" href="/#!/settings/profile" ng-if="authenticatedUser._id == user._id">Edit Your Profile</a>
+					<div class="opacity-70" ng-if="authenticatedUser._id == user._id">Wallet: <i class="fa fa-rupee"></i> {{user.wallet}}</div>
+
+					<h3>Followers ({{followers.length}})</h3>
+					<div class="suggestion-box clearfix" ng-repeat="user in followers">
+						<div class="visitor-profile-picture">
+							<img class="visitor-profile-picture-round" ng-src="{{user.follower_id.profilePicture || '/assets/img/default-avatar.png'}}" alt="visitor-profile-picture"/>
+						</div>
+						<div class="visitor-profile-name">
+							<div><a href="/#!/user/profile/{{user.follower_id._id}}">{{user.follower_id.displayName}}</a></div>
+							<div class="visitor-profile-follower">{{user.follower_id.address.city}}</div>
+						</div>
+					</div>
+
+					<h3>Followings ({{followings.length}})</h3>
+					<div class="suggestion-box clearfix" ng-repeat="user in followings">
+						<div class="visitor-profile-picture">
+							<img class="visitor-profile-picture-round" ng-src="{{user.following_id.profilePicture || '/assets/img/default-avatar.png'}}" alt="visitor-profile-picture"/>
+						</div>
+						<div class="visitor-profile-name">
+							<div><a href="/#!/user/profile/{{user.following_id._id}}">{{user.following_id.displayName}}</a></div>
+							<div class="visitor-profile-follower">{{user.following_id.address.city}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-8">
+							<div class="reviews">
+								<h1 class="page-title" ng-if="totalReviews > 0">{{user.firstName}}'s Reviews ({{totalReviews}})</h1>
+								<h1 class="page-title" ng-if="totalReviews == 0">{{user.firstName}} has not reviewed anything yet</h1>
+								<h1 class="page-title" ng-if="totalReviews == -1">
+									<div class="website-loader">
+										<div class="three-quarters-loader"></div>
+									</div>
+								</h1>
+								<div class="row space-under" ng-repeat="review in reviewList">
+									<div class="col-md-1">
+										<i class="fa fa-user right review-icon"></i>
+									</div>
+									<div class="col-md-11">
+										<div class="color-default text-bold"><a href="#!/detail/{{review.mobile_id._id}}">{{review.mobile_id.name}}</a></div>
+										<div class="sub-title">{{review.mobile_id.brand}}</div>
+										<div class="row">
+											<div class="col-md-2">
+												<span class="text-bold space-right">Rated</span><span class="legend">{{review.rating}}.0</span>
+											</div>
+											<div class="col-md-8">
+												<div class="review-box">
+													<p>{{review.review_text}}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--<div class="col-md-4">
+							<h3>Suggested visitor to follow</h3>
+							<div class="suggestion-box clearfix" ng-repeat="user in userList" ng-if="user._id != authenticatedUser._id && user._id != userId">
+								<div class="visitor-profile-picture">
+									<img class="visitor-profile-picture-round" ng-src="{{user.user.profilePicture || '/assets/img/default-avatar.png'}}" alt="visitor-profile-picture"/>
+								</div>
+								<div class="visitor-profile-name">
+									<div><a href="/#!/user/profile/{{user._id}}">{{user.user.displayName}}</a></div>
+									<div class="visitor-profile-follower">{{user.numReviews}} Reviews</div>
+								</div>
+								<a class="visitor-follower-icon" ng-click="followUser(user._id,user.user.displayName,true)"><i class="fa fa-user-plus"></i></a>
+							</div>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</section>

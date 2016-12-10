@@ -1,0 +1,69 @@
+<div id="mobile-list" ng-controller="OrderController">
+
+	<!--Sub Header-->
+	<section class="sub-header">
+		<div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+		<!-- /.search-bar -->
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!/"><i class="fa fa-home"></i></a></li>
+					<li class="active">My Orders</li>
+				</ol>
+				<!-- /.breadcrumb-->
+			</div>
+			<!-- /.container-->
+		</div>
+		<!-- /.breadcrumb-wrapper-->
+	</section>
+	<!--end Sub Header-->
+
+	<!--Page Content-->
+	<div id="page-content">
+		<section class="container">
+			<h1><a href="javascript:;">Orders Tracked via Flipkart</a></h1>
+			<header class="mbs">
+				<h1 class="page-title" ng-if="totalAffResults > 0">{{totalAffResults}} Orders Tracked</h1>
+				<h1 class="page-title" ng-if="totalAffResults == 0">No Order Tracked Yet.</h1>
+				<h1 class="page-title" ng-if="totalAffResults == -1">Please Wait... Fetching List of Orders...</h1>
+			</header>
+			<div class="mbs row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					Show status by :
+					<select name="affStatusFilter" ng-model="affStatusFilter.status">
+						<option value="">All</option>
+						<option value="tentative">Tentative</option>
+						<option value="pending">Pending</option>
+						<option value="approved">Approved</option>
+						<option value="cancelled">Cancelled</option>
+					</select>
+				</div>
+			</div>
+			<div class="orders-detail" ng-hide="totalAffResults == 0">
+				<table class="specTable" cellspacing="0">
+					<tr>
+						<th class="groupHead">Item Name</th>
+						<th class="groupHead">Item Price (INR)</th>
+						<th class="groupHead">Tentative Cashback (INR)</th>
+						<th class="groupHead">Order Date</th>
+						<th class="groupHead">Order Status</th>
+					</tr>
+					<tr  ng-repeat="order in affOrderList | filter:affStatusFilter.status">
+						<td class="specsKey">{{order.name}}</td>
+						<td class="specsValue">{{order.price}}</td>
+						<td class="specsValue">{{order.cashback}}</td>
+						<td class="specsValue">{{order.createdTime | date}}</td>
+						<td class="specsValue">{{order.status}}</td>
+					</tr>
+					<tr class="text-bold background-color-white">
+						<td class="specsKey">Total</td>
+						<td class="specsValue">{{getTotal(affOrderList,'price',affStatusFilter.status)}}</td>
+						<td class="specsValue">{{getTotal(affOrderList,'cashback',affStatusFilter.status)}}</td>
+						<td class="specsValue"></td>
+						<td class="specsValue"></td>
+					</tr>
+				</table>
+			</div>
+		</section>
+	</div>
+</div>

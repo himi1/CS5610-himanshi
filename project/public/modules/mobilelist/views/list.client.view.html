@@ -1,0 +1,113 @@
+<div id="mobile-list" ng-controller="MobileListController">
+	<nav class="off-canvas-navigation">
+		<header>Navigation</header>
+		<div class="main-navigation navigation-off-canvas"></div>
+	</nav>
+	<!--end Off Canvas Navigation-->
+
+	<!--Sub Header-->
+	<section class="sub-header">
+		<div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+		<!-- /.search-bar -->
+		<div class="breadcrumb-wrapper">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li><a href="#!/"><i class="fa fa-home"></i></a></li>
+					<li class="active">List</li>
+				</ol>
+				<!-- /.breadcrumb-->
+			</div>
+			<!-- /.container-->
+		</div>
+		<!-- /.breadcrumb-wrapper-->
+	</section>
+	<!--end Sub Header-->
+
+	<!--Page Content-->
+	<div id="page-content">
+		<section class="container">
+			<div class="">
+				<!--Content-->
+				<div class="">
+					<header>
+						<h1 class="page-title" ng-if="totalPages > 0">Showing {{(page-1)*24+1}} - {{page*24 < totalResults ? page*24 : totalResults}} of {{totalResults}} Results <span ng-show="query != ''">for '{{query}}'</span></h1>
+						<h1 class="page-title" ng-if="totalPages == 0">No Results found <span ng-show="query != ''">for '{{query}}'</span></h1>
+						<h1 class="page-title" ng-if="totalPages == -1">
+							<div class="website-loader">
+								<div class="three-quarters-loader"></div>
+							</div>
+						</h1>
+					</header>
+
+					<!--Listing Grid-->
+					<section class="block equal-height">
+						<div class="row">
+							<div class="col-md-3 col-sm-4" ng-repeat="mobile in mobileList">
+								<div class="item">
+									<div class="image">
+										<!--<div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>-->
+										<a href="#!/detail/{{mobile._id}}">
+											<div class="overlay">
+												<div class="inner">
+													<div class="content">
+														<h4>Specification</h4>
+														<p ng-show="mobile.fullCpu">CPU : {{mobile.fullCpu}}</p>
+														<p ng-show="mobile.ram">RAM : {{mobile.ram}}</p>
+														<p ng-show="mobile.internal">Internal Memory : {{mobile.internal}}</p>
+														<p ng-show="mobile.camera">Primary Camera : {{mobile.camera}}</p>
+													</div>
+												</div>
+											</div>
+											<div class="item-specific">
+												<span title="Processor" ng-show="mobile.cpu"><i class="fa fa-bar-chart"></i> {{mobile.cpu}}</span>
+												<span title="Camera" ng-show="mobile.camera"><i class="fa fa-camera"></i> {{mobile.camera}}</span>
+												<span title="RAM" ng-show="mobile.ram"><i class="fa fa-database"></i> {{mobile.ram}}</span>
+											</div>
+											<!--<div class="icon" ng-if="$index % 3 == 0">
+												<i class="fa fa-thumbs-up"></i>
+											</div>-->
+											<div class="add-to-favourite submit-item" ng-click="addToFavourite($event,mobile._id,mobile.name)">
+												<div class="content"><span>Add to Shortlist</span></div>
+												<div class="icon">
+													<i class="fa fa-star-o"></i>
+												</div>
+											</div>
+											<div class="phone-image" style="background-image: url('http://gronicalappstudios.com/phonegallary/{{mobile.brand}}/{{mobile._id}}/{{mobile._id}}-main.jpg')"></div>
+										</a>
+									</div>
+									<div class="wrapper">
+										<a href="#!/detail/{{mobile._id}}"><h3>{{mobile.name}}</h3></a>
+										<figure>{{mobile.brand}}</figure>
+										<div class="info">
+											<!--<div class="type">
+												<i><img src="assets/icons/restaurants-bars/restaurants/restaurant.png" alt=""></i>
+												<span>Restaurant</span>
+											</div>-->
+											<div class="star-rating" data-star="{{mobile.avgRating || 0}}"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /.item-->
+							</div>
+						</div>
+						<!--/.row-->
+					</section>
+					<!--end Listing Grid-->
+					<!--Pagination-->
+					<nav ng-if="totalPages > 1">
+						<ul class="pagination pull-right">
+							<li ng-repeat="index in getPageNumber(totalPages) track by $index" ng-class="{'active': page == ($index + 1)}"><a href="#!/list/{{brand}}/{{query}}/{{$index+1}}">{{$index+1}}</a></li>
+							<!--<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>-->
+							<li><a href="#!/list/{{brand}}/{{query}}/{{page-1 > 0 ? page-1 : totalPages }}" class="previous" ng-class="{'disabled': (page-1) < 1}"><i class="fa fa-angle-left"></i></a></li>
+							<li><a href="#!/list/{{brand}}/{{query}}/{{page+1 <= totalPages ? page+1 : 1}}" ng-class="{'disabled': (page+1) > totalPages}" class="next"><i class="fa fa-angle-right"></i></a></li>
+						</ul>
+					</nav>
+					<!--end Pagination-->
+				</div>
+
+			</div>
+		</section>
+	</div>
+</div>
